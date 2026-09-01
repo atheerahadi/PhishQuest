@@ -1,0 +1,268 @@
+/* =========================================================
+   PHISHQUEST - SCREEN FIT
+   ========================================================= */
+
+html,
+body,
+#root {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* =========================================================
+   DESKTOP
+   ========================================================= */
+
+@media (min-width: 769px) {
+
+    .dashboard,
+    .learn-page,
+    .lesson-page,
+    .quiz-page,
+    .simulation-page,
+    .rewards-page,
+    .profile-page,
+    .manual-page,
+    .teacher-page,
+    .ppd-page,
+    .website-page {
+        min-height: 100vh;
+        max-height: 100vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .dashboard,
+    .learn-page,
+    .lesson-page,
+    .quiz-page,
+    .simulation-page,
+    .rewards-page,
+    .profile-page,
+    .manual-page,
+    .teacher-page,
+    .ppd-page,
+    .website-page {
+        padding-bottom: 30px;
+    }
+
+}
+
+
+/* =========================================================
+   QUIZ
+   ========================================================= */
+
+@media (min-width: 769px) {
+
+    .quiz-page {
+        min-height: 100vh;
+        max-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow-y: auto;
+        padding: 25px;
+    }
+
+    .quiz-start-card {
+        width: min(820px, 90%);
+        max-height: calc(100vh - 50px);
+        overflow-y: auto;
+        padding: 35px 40px;
+    }
+
+    .quiz-card {
+        width: min(900px, 90%);
+        max-height: calc(100vh - 40px);
+        overflow-y: auto;
+    }
+
+    .result-card {
+        max-height: calc(100vh - 50px);
+        overflow-y: auto;
+    }
+
+}
+
+
+/* =========================================================
+   SIMULATION
+   ========================================================= */
+
+@media (min-width: 769px) {
+
+    .simulation-page {
+        min-height: 100vh;
+        max-height: 100vh;
+        overflow: hidden;
+    }
+
+    .simulation-container {
+        height: calc(100vh - 180px);
+        min-height: 0;
+    }
+
+    .email-list,
+    .email-view {
+        min-height: 0;
+        max-height: 100%;
+    }
+
+    .email-list {
+        overflow-y: auto;
+    }
+
+    .email-view {
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .emailContent {
+        flex: 1;
+        overflow-y: auto;
+        min-height: 0;
+    }
+
+}
+
+
+/* =========================================================
+   LESSON
+   ========================================================= */
+
+@media (min-width: 769px) {
+
+    .lesson-page {
+        overflow-y: auto;
+    }
+
+    .lesson-video {
+        max-height: 48vh;
+        width: 100%;
+        object-fit: contain;
+    }
+
+    .video-container {
+        max-height: 50vh;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    html,
+    body,
+    #root {
+        width: 100%;
+        min-height: 100%;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .dashboard,
+    .learn-page,
+    .lesson-page,
+    .quiz-page,
+    .simulation-page,
+    .rewards-page,
+    .profile-page,
+    .manual-page,
+    .teacher-page,
+    .ppd-page,
+    .website-page {
+        width: 100%;
+        min-height: 100vh;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+
+    /* =========================
+       QUIZ MOBILE
+       ========================= */
+
+    .quiz-page {
+        padding: 15px;
+    }
+
+    .quiz-start-card {
+        width: 100%;
+        max-width: 100%;
+        padding: 25px 18px;
+        margin: 10px auto;
+    }
+
+    .quiz-start-card h1 {
+        font-size: 28px;
+    }
+
+    .quiz-start-card p {
+        font-size: 14px;
+    }
+
+    .quiz-start-info {
+        gap: 10px;
+    }
+
+
+    /* =========================
+       SIMULATION MOBILE
+       ========================= */
+
+    .simulation-page {
+        overflow-y: auto;
+    }
+
+    .simulation-container {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        min-height: 0;
+    }
+
+    .email-list {
+        max-height: 180px;
+        overflow-y: auto;
+    }
+
+    .email-view {
+        min-height: 400px;
+        max-height: none;
+    }
+
+    .emailContent {
+        overflow-y: auto;
+    }
+
+
+    /* =========================
+       LESSON MOBILE
+       ========================= */
+
+    .lesson-video {
+        width: 100%;
+        height: auto;
+        max-height: 45vh;
+        object-fit: contain;
+    }
+
+}

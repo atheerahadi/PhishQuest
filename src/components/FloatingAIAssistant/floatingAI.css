@@ -1,0 +1,140 @@
+.phishbot-button {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+
+  width: 75px;
+  height: 75px;
+
+  border: none;
+  background: white;
+  border-radius: 50%;
+
+  padding: 8px;
+
+  cursor: pointer;
+
+  z-index: 9999;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+
+  transition: 0.3s;
+}
+
+.phishbot-button:hover {
+  transform: scale(1.1);
+}
+
+.phishbot-button img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.phishbot-attention {
+  animation: phishbotBounce 1s infinite;
+}
+
+@keyframes phishbotBounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+}
+
+.phishbot-help {
+  position: fixed;
+
+  right: 30px;
+  bottom: 115px;
+
+  width: 300px;
+
+  background: white;
+
+  border-radius: 20px;
+
+  padding: 20px;
+
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+
+  z-index: 9999;
+}
+
+.help-close {
+  position: absolute;
+
+  right: 12px;
+  top: 10px;
+
+  border: none;
+  background: transparent;
+
+  font-size: 20px;
+
+  cursor: pointer;
+}
+
+.help-content strong {
+  display: block;
+
+  font-size: 18px;
+
+  margin-bottom: 8px;
+}
+
+.help-content p {
+  font-size: 14px;
+
+  line-height: 1.5;
+
+  margin-bottom: 15px;
+}
+
+.help-button {
+  width: 100%;
+
+  border: none;
+
+  padding: 12px;
+
+  border-radius: 12px;
+
+  background: #6c63ff;
+
+  color: white;
+
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.help-button:hover {
+  opacity: 0.9;
+}
+
+.phishbot-chat {
+  position: fixed;
+
+  right: 25px;
+  bottom: 110px;
+
+  width: 390px;
+  height: 600px;
+
+  z-index: 9998;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+
+  background: white;
+}

@@ -1,0 +1,306 @@
+/* =========================
+   LOGIN PAGE
+========================= */
+
+.login-container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    135deg,
+    #fff4c7 0%,
+    #ffe88a 45%,
+    #ffc928 100%
+  );
+  padding: 30px 20px;
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   LOGIN CARD
+========================= */
+
+.login-card {
+  width: 100%;
+  max-width: 500px;
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 45px 55px 40px;
+  box-sizing: border-box;
+  text-align: center;
+  box-shadow: 0 18px 45px rgba(170, 120, 0, 0.18);
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.mascot {
+  width: 125px;
+  height: 125px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.login-card h1 {
+  margin: 0 0 12px;
+  font-size: 32px;
+  line-height: 1.2;
+  color: #111111;
+  font-weight: 700;
+}
+
+
+.login-card > p {
+  margin: 0 0 28px;
+  font-size: 17px;
+  color: #666666;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.login-card form {
+  width: 100%;
+}
+
+
+/* =========================
+   INPUT
+========================= */
+
+.login-card input {
+  width: 100%;
+  height: 54px;
+  box-sizing: border-box;
+  padding: 0 18px;
+  margin-bottom: 14px;
+
+  border: 2px solid #e5e5e5;
+  border-radius: 12px;
+
+  background: #ffffff;
+  color: #222222;
+
+  font-size: 16px;
+  font-family: inherit;
+
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+
+.login-card input::placeholder {
+  color: #999999;
+}
+
+
+.login-card input:focus {
+  border-color: #ff8500;
+  box-shadow: 0 0 0 4px rgba(255, 133, 0, 0.10);
+}
+
+
+/* =========================
+   ROLE SELECT
+========================= */
+
+.role-select {
+  width: 100%;
+  margin: 2px 0 16px;
+  text-align: left;
+}
+
+
+.role-select label {
+  display: block;
+  margin: 0 0 7px 3px;
+
+  color: #555555;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+.role-select select {
+  width: 100%;
+  height: 54px;
+  box-sizing: border-box;
+
+  padding: 0 16px;
+
+  border: 2px solid #e5e5e5;
+  border-radius: 12px;
+
+  background: #ffffff;
+  color: #333333;
+
+  font-size: 16px;
+  font-family: inherit;
+
+  cursor: pointer;
+  outline: none;
+
+  transition: all 0.2s ease;
+}
+
+
+.role-select select:hover {
+  border-color: #ffb347;
+}
+
+
+.role-select select:focus {
+  border-color: #ff8500;
+  box-shadow: 0 0 0 4px rgba(255, 133, 0, 0.10);
+}
+
+
+/* =========================
+   ERROR MESSAGE
+========================= */
+
+.login-error {
+  margin: 8px 0 15px !important;
+
+  color: #e53935 !important;
+
+  font-size: 14px !important;
+  font-weight: 600;
+
+  line-height: 1.4;
+}
+
+
+/* =========================
+   LOGIN BUTTON
+========================= */
+
+.login-card button {
+  width: 100%;
+  height: 54px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: linear-gradient(
+    135deg,
+    #ff9800,
+    #ff7500
+  );
+
+  color: #ffffff;
+
+  font-size: 17px;
+  font-weight: 700;
+  font-family: inherit;
+
+  cursor: pointer;
+
+  box-shadow: 0 7px 18px rgba(255, 126, 0, 0.25);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+
+.login-card button:hover:not(:disabled) {
+  transform: translateY(-2px);
+
+  box-shadow: 0 10px 22px rgba(255, 126, 0, 0.32);
+
+  background: linear-gradient(
+    135deg,
+    #ff9f19,
+    #ff7900
+  );
+}
+
+
+.login-card button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+
+.login-card button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+
+/* =========================
+   REGISTER TEXT
+========================= */
+
+.login-card form + p {
+  margin-top: 24px;
+  margin-bottom: 0;
+
+  color: #666666;
+
+  font-size: 15px;
+}
+
+
+.login-card a {
+  color: #7b2cbf;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+
+.login-card a:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .login-container {
+    padding: 20px 15px;
+  }
+
+
+  .login-card {
+    max-width: 100%;
+    padding: 35px 25px 30px;
+    border-radius: 22px;
+  }
+
+
+  .mascot {
+    width: 105px;
+    height: 105px;
+    margin-bottom: 18px;
+  }
+
+
+  .login-card h1 {
+    font-size: 26px;
+  }
+
+
+  .login-card > p {
+    font-size: 15px;
+  }
+
+}

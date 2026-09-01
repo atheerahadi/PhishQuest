@@ -1,0 +1,748 @@
+.sidebar{
+
+position:fixed;
+
+left:0;
+top:0;
+
+width:240px;
+height:100vh;
+
+background:linear-gradient(
+180deg,
+#FFC107,
+#FFB300
+);
+
+display:flex;
+flex-direction:column;
+
+padding:20px 0;
+
+box-shadow:5px 0 18px rgba(0,0,0,.12);
+
+z-index:999;
+
+overflow-y:auto;
+
+}
+
+/* ================= LOGO ================= */
+
+.logo-section{
+
+text-align:center;
+
+padding:10px 20px 25px;
+
+}
+
+.logo-section img{
+
+width:95px;
+height:95px;
+
+border-radius:22px;
+
+object-fit:cover;
+
+border:4px solid white;
+
+box-shadow:0 8px 20px rgba(0,0,0,.15);
+
+transition:.3s;
+
+}
+
+.logo-section img:hover{
+
+transform:scale(1.05);
+
+}
+
+.logo-section h2{
+
+margin-top:18px;
+
+font-size:26px;
+
+font-weight:bold;
+
+color:#222;
+
+}
+
+.logo-section p{
+
+margin-top:8px;
+
+font-size:14px;
+
+line-height:1.5;
+
+color:#444;
+
+}
+
+/* ================= MENU ================= */
+
+nav{
+
+display:flex;
+
+flex-direction:column;
+
+padding:10px;
+
+gap:8px;
+
+flex:1;
+
+}
+
+.menu-item{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+padding:15px 18px;
+
+border-radius:16px;
+
+text-decoration:none;
+
+font-size:17px;
+
+font-weight:600;
+
+color:#222;
+
+transition:.3s;
+
+}
+
+.menuIcon{
+
+font-size:20px;
+
+width:25px;
+
+display:flex;
+
+justify-content:center;
+
+}
+
+/* ================= HOVER ================= */
+
+.menu-item:hover{
+
+background:white;
+
+transform:translateX(6px);
+
+box-shadow:0 8px 20px rgba(255,152,0,.25);
+
+}
+
+/* ================= ACTIVE ================= */
+
+.menu-item.active{
+
+background:white;
+
+border-left:6px solid #ff7a00;
+
+color:#ff7a00;
+
+font-weight:bold;
+
+box-shadow:0 10px 22px rgba(255,152,0,.25);
+
+}
+
+.menu-item.active .menuIcon{
+
+color:#ff7a00;
+
+}
+
+/* ================= LOGOUT ================= */
+
+.logout{
+
+margin:18px;
+
+padding:15px;
+
+border:none;
+
+border-radius:15px;
+
+background:#ff7a00;
+
+color:white;
+
+font-size:16px;
+
+font-weight:bold;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:10px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.logout:hover{
+
+background:#ff9800;
+
+transform:translateY(-3px);
+
+box-shadow:0 10px 20px rgba(255,152,0,.25);
+
+}
+
+/* ================= SCROLL ================= */
+
+.sidebar::-webkit-scrollbar{
+
+width:6px;
+
+}
+
+.sidebar::-webkit-scrollbar-thumb{
+
+background:#e0a000;
+
+border-radius:20px;
+
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+.sidebar{
+
+position:relative;
+
+width:100%;
+
+height:auto;
+
+}
+
+}
+.music-btn {
+  width: calc(100% - 40px);
+  margin: 10px 20px;
+  padding: 14px 20px;
+  border: 2px solid #ff9800;
+  border-radius: 15px;
+  background: white;
+  color: #ff9800;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: 0.3s;
+}
+
+.music-btn:hover {
+  background: #ff9800;
+  color: white;
+}
+/* ==================================================
+   TEACHER SIDEBAR - BLUE THEME
+================================================== */
+
+.teacher-sidebar {
+    background: linear-gradient(
+        180deg,
+        #1565c0 0%,
+        #1976d2 50%,
+        #42a5f5 100%
+    );
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.teacher-sidebar .logo-section h2 {
+    color: #ffffff;
+}
+
+.teacher-sidebar .logo-section p {
+    color: #e3f2fd;
+}
+
+
+/* =========================
+   MENU
+========================= */
+
+.teacher-sidebar .menu-item {
+    color: #ffffff;
+}
+
+
+.teacher-sidebar .menu-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+
+.teacher-sidebar .menu-item.active {
+    background: #ffffff;
+    color: #1565c0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================
+   ICON
+========================= */
+
+.teacher-sidebar .menuIcon {
+    color: inherit;
+}
+
+
+/* =========================
+   MUSIC BUTTON
+========================= */
+
+.teacher-sidebar .music-btn {
+    background: #ffffff;
+    color: #1565c0;
+    border: none;
+}
+
+
+.teacher-sidebar .music-btn:hover {
+    background: #e3f2fd;
+}
+
+
+/* =========================
+   LOGOUT
+========================= */
+
+.teacher-sidebar .logout {
+    background: #0d47a1;
+    color: #ffffff;
+    border: none;
+}
+
+
+.teacher-sidebar .logout:hover {
+    background: #083b8c;
+}
+/* =========================================================
+   MOBILE SIDEBAR / BURGER MENU
+   ========================================================= */
+
+.mobile-menu-button {
+    display: none !important;
+}
+
+.mobile-close-button {
+    display: none !important;
+}
+
+.sidebar-overlay {
+    display: none !important;
+}
+
+
+/* =========================================================
+   PHONE
+   ========================================================= */
+
+@media screen and (max-width: 768px) {
+
+    /* =====================================================
+       BURGER BUTTON
+       ===================================================== */
+
+    .mobile-menu-button {
+        display: flex !important;
+
+        position: fixed !important;
+
+        top: 15px !important;
+        left: 15px !important;
+
+        width: 48px !important;
+        height: 48px !important;
+
+        padding: 0 !important;
+        margin: 0 !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        border: none !important;
+        border-radius: 12px !important;
+
+        background: #ff9800 !important;
+        color: white !important;
+
+        font-size: 21px !important;
+
+        cursor: pointer !important;
+
+        z-index: 10001 !important;
+
+        box-shadow:
+            0 5px 15px rgba(0, 0, 0, 0.18) !important;
+
+        appearance: none !important;
+        -webkit-appearance: none !important;
+    }
+
+
+    .mobile-menu-button:hover {
+        background: #f57c00 !important;
+    }
+
+
+    .mobile-menu-button:active {
+        transform: scale(0.95);
+    }
+
+
+    /* =====================================================
+       OVERLAY
+       ===================================================== */
+
+    .sidebar-overlay {
+        display: block !important;
+
+        position: fixed !important;
+
+        top: 0 !important;
+        left: 0 !important;
+
+        width: 100vw !important;
+        height: 100vh !important;
+
+        background: rgba(0, 0, 0, 0.35) !important;
+
+        z-index: 9998 !important;
+
+        backdrop-filter: blur(2px);
+    }
+
+
+    /* =====================================================
+       SIDEBAR CLOSED
+       ===================================================== */
+
+    .sidebar {
+        position: fixed !important;
+
+        top: 0 !important;
+        left: 0 !important;
+
+        width: 280px !important;
+        max-width: 85vw !important;
+
+        height: 100vh !important;
+
+        margin: 0 !important;
+
+        padding: 0 !important;
+
+        z-index: 10000 !important;
+
+        transform: translateX(-110%) !important;
+
+        transition:
+            transform 0.3s ease !important;
+
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* =====================================================
+       SIDEBAR OPEN
+       ===================================================== */
+
+    .sidebar.mobile-open {
+        transform: translateX(0) !important;
+    }
+
+
+    /* =====================================================
+       CLOSE BUTTON
+       ===================================================== */
+
+    .sidebar .mobile-close-button {
+        display: flex !important;
+
+        position: absolute !important;
+
+        top: 15px !important;
+        right: 15px !important;
+
+        width: 40px !important;
+        height: 40px !important;
+
+        min-width: 40px !important;
+        max-width: 40px !important;
+
+        padding: 0 !important;
+        margin: 0 !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        border: none !important;
+        border-radius: 10px !important;
+
+        background: white !important;
+        color: #ff9800 !important;
+
+        font-size: 18px !important;
+
+        cursor: pointer !important;
+
+        z-index: 10002 !important;
+
+        appearance: none !important;
+        -webkit-appearance: none !important;
+    }
+
+
+    .sidebar .mobile-close-button:hover {
+        background: #fff4df !important;
+    }
+
+
+    /* =====================================================
+       LOGO SECTION
+       ===================================================== */
+
+    .sidebar .logo-section {
+        padding-top: 75px !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        padding-bottom: 20px !important;
+
+        text-align: center !important;
+    }
+
+
+    .sidebar .logo-section img {
+        width: 95px !important;
+        height: 95px !important;
+
+        object-fit: cover !important;
+
+        border-radius: 22px !important;
+    }
+
+
+    .sidebar .logo-section h2 {
+        font-size: 27px !important;
+
+        margin-top: 15px !important;
+        margin-bottom: 10px !important;
+    }
+
+
+    .sidebar .logo-section p {
+        font-size: 15px !important;
+
+        line-height: 1.6 !important;
+    }
+
+
+    /* =====================================================
+       NAVIGATION
+       ===================================================== */
+
+    .sidebar nav {
+        width: 100% !important;
+
+        padding: 10px 15px !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    .sidebar nav .menu-item {
+        display: flex !important;
+
+        width: 100% !important;
+
+        min-height: 52px !important;
+
+        margin: 4px 0 !important;
+        padding: 0 15px !important;
+
+        box-sizing: border-box !important;
+
+        align-items: center !important;
+
+        border-radius: 14px !important;
+
+        font-size: 16px !important;
+    }
+
+
+    .sidebar nav .menuIcon {
+        width: 35px !important;
+        min-width: 35px !important;
+
+        font-size: 19px !important;
+
+        display: flex !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+
+    .sidebar nav .menu-item span {
+        margin-left: 8px !important;
+    }
+
+
+    /* =====================================================
+       MUSIC BUTTON
+       ===================================================== */
+
+    .sidebar .music-btn {
+        display: flex !important;
+
+        width: calc(100% - 30px) !important;
+
+        min-height: 50px !important;
+
+        margin: 15px !important;
+
+        padding: 0 15px !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        box-sizing: border-box !important;
+
+        border-radius: 14px !important;
+    }
+
+
+    /* =====================================================
+       LOGOUT
+       ===================================================== */
+
+    .sidebar .logout {
+        display: flex !important;
+
+        width: calc(100% - 30px) !important;
+
+        min-height: 50px !important;
+
+        margin: 10px 15px 25px !important;
+
+        padding: 0 15px !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        box-sizing: border-box !important;
+
+        border-radius: 14px !important;
+    }
+
+
+    /* =====================================================
+       REMOVE DESKTOP CONTENT OFFSET
+       ===================================================== */
+
+    .dashboard,
+    .profile-page,
+    .rewards-page,
+    .learn-page,
+    .simulation-page,
+    .quiz-page,
+    .teacher-page,
+    .manual-page {
+
+        margin-left: 0 !important;
+    }
+
+
+    /* =====================================================
+       GENERAL MOBILE CONTENT
+       ===================================================== */
+
+    body {
+        overflow-x: hidden !important;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONE
+   ========================================================= */
+
+@media screen and (max-width: 480px) {
+
+    .sidebar {
+        width: 270px !important;
+    }
+
+
+    .mobile-menu-button {
+        width: 44px !important;
+        height: 44px !important;
+
+        top: 12px !important;
+        left: 12px !important;
+
+        font-size: 19px !important;
+    }
+
+
+    .sidebar .logo-section img {
+        width: 85px !important;
+        height: 85px !important;
+    }
+
+
+    .sidebar .logo-section h2 {
+        font-size: 24px !important;
+    }
+
+
+    .sidebar nav .menu-item {
+        min-height: 48px !important;
+
+        font-size: 15px !important;
+    }
+
+}

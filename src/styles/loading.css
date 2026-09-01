@@ -1,0 +1,222 @@
+.loadingScreen {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    background: #FFF8E7;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    z-index: 9999;
+
+    animation: fadeIn 0.5s;
+}
+
+
+.loadingLogo {
+
+    width: 220px;
+
+    height: auto;
+
+    object-fit: contain;
+
+    border-radius: 30px;
+
+    margin-bottom: 25px;
+
+    animation: bounce 1.5s infinite;
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+
+}
+
+
+.loadingScreen h1 {
+
+    font-size: 48px;
+
+    margin-bottom: 15px;
+
+    color: #ff9800;
+
+}
+
+
+.loadingScreen p {
+
+    font-size: 20px;
+
+    color: #555;
+
+    text-align: center;
+
+    line-height: 1.7;
+
+    margin-bottom: 35px;
+
+}
+
+
+.loader {
+
+    width: 280px;
+
+    height: 18px;
+
+    background: #ececec;
+
+    border-radius: 30px;
+
+    overflow: hidden;
+
+}
+
+
+.loaderFill {
+
+    width: 100%;
+
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        #ff9800,
+        #ffc107
+    );
+
+    animation: loading 2s linear;
+
+}
+
+
+.loadingScreen span {
+
+    margin-top: 20px;
+
+    font-size: 18px;
+
+    color: #666;
+
+}
+
+
+/* =========================
+   LOADING ANIMATION
+========================= */
+
+@keyframes loading {
+
+    from {
+
+        width: 0;
+
+    }
+
+    to {
+
+        width: 100%;
+
+    }
+
+}
+
+
+/* =========================
+   MASCOT ANIMATION
+========================= */
+
+@keyframes bounce {
+
+    0% {
+
+        transform: translateY(0);
+
+    }
+
+    50% {
+
+        transform: translateY(-10px);
+
+    }
+
+    100% {
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+/* =========================
+   SCREEN FADE
+========================= */
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+
+    }
+
+    to {
+
+        opacity: 1;
+
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .loadingLogo {
+
+        width: 170px;
+
+        height: auto;
+
+    }
+
+    .loadingScreen h1 {
+
+        font-size: 36px;
+
+    }
+
+    .loadingScreen p {
+
+        font-size: 17px;
+
+    }
+
+    .loader {
+
+        width: 230px;
+
+    }
+
+    .loadingScreen span {
+
+        font-size: 16px;
+
+    }
+
+}

@@ -1,0 +1,827 @@
+/* =========================
+   PROFILE PAGE
+========================= */
+
+.profile-page {
+    margin-left: 250px;
+    padding: 40px;
+    min-height: 100vh;
+    background: #fff8e7;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   PAGE TITLE
+========================= */
+
+.profile-page > h1 {
+    margin: 0 0 30px 0;
+    font-size: 38px;
+    color: #333;
+    line-height: 1.3;
+}
+
+
+/* =========================
+   PROFILE CARD
+========================= */
+
+.profile-card {
+    width: 100%;
+    box-sizing: border-box;
+
+    background: white;
+
+    border-radius: 25px;
+
+    padding: 35px;
+
+    min-height: 350px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08);
+
+    margin-bottom: 30px;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   AVATAR
+========================= */
+
+.profile-card .profileAvatar {
+    display: block;
+
+    width: 130px !important;
+    height: 130px !important;
+
+    min-width: 130px !important;
+    min-height: 130px !important;
+
+    max-width: 130px !important;
+    max-height: 130px !important;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 5px solid #ffd54f;
+
+    margin: 0 0 20px 0;
+
+    box-sizing: border-box;
+
+    flex-shrink: 0;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================
+   PROFILE NAME
+========================= */
+
+.profile-card h2 {
+    margin: 5px 0 10px;
+
+    font-size: 28px;
+
+    color: #333;
+
+    line-height: 1.3;
+}
+
+
+.profile-card p {
+    margin: 6px 0;
+
+    font-size: 16px;
+
+    color: #666;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   TEACHER INFO
+========================= */
+
+.teacher-info {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    background: white;
+
+    border-radius: 22px;
+
+    padding: 30px;
+
+    margin-bottom: 25px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+
+.teacher-info h2 {
+    margin: 0 0 20px 0;
+
+    font-size: 26px;
+
+    color: #333;
+}
+
+
+.teacher-info p {
+    margin: 10px 0;
+
+    font-size: 17px;
+
+    color: #444;
+
+    line-height: 1.5;
+}
+
+
+.teacher-info strong {
+    color: #222;
+}
+
+
+/* =========================
+   TEACHER WELCOME
+========================= */
+
+.teacher-welcome {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    background: white;
+
+    border-radius: 22px;
+
+    padding: 30px;
+
+    margin-bottom: 30px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+
+.teacher-welcome h2 {
+    margin: 0 0 15px 0;
+
+    font-size: 26px;
+
+    color: #333;
+}
+
+
+.teacher-welcome p {
+    margin: 0;
+
+    color: #555;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   STUDENT STATISTICS
+========================= */
+
+.statsGrid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 25px;
+
+    margin-bottom: 30px;
+}
+
+
+.statCard {
+    background: white;
+
+    border-radius: 22px;
+
+    padding: 30px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+
+.statCard h3 {
+    margin-top: 0;
+
+    color: #777;
+}
+
+
+.statCard h2 {
+    color: #ff8a00;
+
+    font-size: 30px;
+}
+
+
+/* =========================
+   QUIZ PERFORMANCE
+========================= */
+
+.missionCard {
+    background: white;
+
+    border-radius: 22px;
+
+    padding: 30px;
+
+    margin-bottom: 30px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+
+.missionCard h2 {
+    margin-top: 0;
+
+    color: #333;
+}
+
+
+.missionCard p {
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   BADGES
+========================= */
+
+.badgeSection {
+    background: white;
+
+    border-radius: 22px;
+
+    padding: 30px;
+
+    margin-bottom: 30px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+
+.badgeSection h2 {
+    margin-top: 0;
+
+    color: #333;
+}
+
+
+.badges {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+.badge {
+    background: #fff8e7;
+
+    border-radius: 18px;
+
+    padding: 25px;
+
+    text-align: center;
+
+    font-size: 35px;
+}
+
+
+.badge p {
+    margin: 10px 0 0;
+
+    font-size: 15px;
+
+    color: #555;
+}
+
+
+.badge.locked {
+    opacity: 0.4;
+
+    filter: grayscale(1);
+}
+
+
+/* ==================================================
+   TEACHER BLUE THEME
+================================================== */
+
+.teacher-profile {
+    background: #eef6ff;
+}
+
+
+/* PAGE TITLE */
+
+.teacher-profile > h1 {
+    color: #174a7c;
+}
+
+
+/* PROFILE CARD */
+
+.teacher-profile .profile-card {
+    border-top: 5px solid #2196f3;
+}
+
+
+/* TEACHER AVATAR */
+
+.teacher-profile .profileAvatar {
+    border: 5px solid #42a5f5 !important;
+
+    box-shadow:
+        0 5px 20px rgba(33, 150, 243, 0.25);
+}
+
+
+/* TEACHER NAME */
+
+.teacher-profile .profile-card h2 {
+    color: #174a7c;
+}
+
+
+/* TEACHER ROLE */
+
+.teacher-profile .profile-card p:last-child {
+    color: #1976d2;
+
+    font-weight: 600;
+}
+
+
+/* ACCOUNT INFO */
+
+.teacher-profile .teacher-info {
+    border-left: 6px solid #2196f3;
+}
+
+
+.teacher-profile .teacher-info h2 {
+    color: #174a7c;
+}
+
+
+.teacher-profile .teacher-info strong {
+    color: #1976d2;
+}
+
+
+/* WELCOME */
+
+.teacher-profile .teacher-welcome {
+    border-left: 6px solid #42a5f5;
+}
+
+
+.teacher-profile .teacher-welcome h2 {
+    color: #174a7c;
+}
+
+
+.teacher-profile .teacher-welcome p {
+    color: #456b89;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+    .profile-page {
+        margin-left: 0;
+        padding: 25px;
+    }
+
+
+    .profile-page > h1 {
+        font-size: 30px;
+    }
+
+
+    .profile-card {
+        min-height: 300px;
+
+        padding: 25px;
+    }
+
+
+    .profile-card .profileAvatar {
+        width: 110px !important;
+        height: 110px !important;
+
+        min-width: 110px !important;
+        min-height: 110px !important;
+
+        max-width: 110px !important;
+        max-height: 110px !important;
+    }
+
+
+    .statsGrid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .badges {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 500px) {
+
+    .profile-page {
+        padding: 20px;
+    }
+
+
+    .profile-page > h1 {
+        font-size: 26px;
+    }
+
+
+    .badges {
+        grid-template-columns: 1fr;
+    }
+
+}
+/* ==================================================
+   TEACHER BLUE SIDEBAR
+================================================== */
+
+.teacher-sidebar {
+    background: linear-gradient(
+        180deg,
+        #1565c0 0%,
+        #1976d2 50%,
+        #2196f3 100%
+    );
+}
+
+
+/* LOGO TITLE */
+
+.teacher-sidebar .logo-section h2 {
+    color: white;
+}
+
+
+/* DESCRIPTION */
+
+.teacher-sidebar .logo-section p {
+    color: #e3f2fd;
+}
+
+
+/* MENU */
+
+.teacher-sidebar .menu-item {
+    color: white;
+}
+
+
+.teacher-sidebar .menu-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+
+/* ACTIVE MENU */
+
+.teacher-sidebar .menu-item.active {
+    background: white;
+
+    color: #1976d2;
+
+    border-color: #42a5f5;
+}
+
+
+/* ICON */
+
+.teacher-sidebar .menuIcon {
+    color: inherit;
+}
+
+
+/* MUSIC */
+
+.teacher-sidebar .music-btn {
+    background: white;
+
+    color: #1976d2;
+
+    border-color: #42a5f5;
+}
+
+
+.teacher-sidebar .music-btn:hover {
+    background: #e3f2fd;
+}
+
+
+/* LOGOUT */
+
+.teacher-sidebar .logout {
+    background: #0d47a1;
+
+    color: white;
+}
+
+
+.teacher-sidebar .logout:hover {
+    background: #083b82;
+}
+/* =========================
+   TEACHER PROFILE THEME
+========================= */
+
+.teacher-profile {
+    background: #eef6ff !important;
+}
+
+.teacher-profile .profile-card {
+    border-top: 5px solid #2196f3;
+}
+
+.teacher-profile .profile-page-title {
+    color: #1565c0;
+}
+
+.teacher-profile .teacher-info-card {
+    background: #ffffff;
+    border-left: 6px solid #2196f3;
+}
+
+.teacher-profile .teacher-info-card h2 {
+    color: #1565c0;
+}
+
+.teacher-profile .teacher-info-card p {
+    color: #444;
+}
+
+.teacher-profile .teacher-status {
+    color: #2e7d32;
+    font-weight: bold;
+}
+
+.teacher-profile .teacher-welcome {
+    background: linear-gradient(
+        135deg,
+        #e3f2fd,
+        #f5faff
+    );
+    border-left: 6px solid #2196f3;
+}
+
+.teacher-profile .teacher-welcome h2 {
+    color: #1565c0;
+}
+/* ==================================================
+   TEACHER PROFILE - BLUE THEME
+================================================== */
+
+.teacher-profile {
+    background: #eef7ff;
+    min-height: 100vh;
+    padding: 40px;
+}
+
+
+/* =========================
+   PAGE TITLE
+========================= */
+
+.teacher-profile > h1 {
+    color: #1565c0;
+}
+
+
+/* =========================
+   PROFILE CARD
+========================= */
+
+.teacher-profile .teacher-profile-card {
+    background: #ffffff;
+    border-top: 6px solid #2196f3;
+
+    box-shadow:
+        0 10px 30px rgba(33, 150, 243, 0.12);
+}
+
+
+/* =========================
+   AVATAR
+========================= */
+
+.teacher-profile .profileAvatar {
+    border: 5px solid #64b5f6;
+
+    box-shadow:
+        0 6px 18px rgba(33, 150, 243, 0.18);
+}
+
+
+/* =========================
+   NAME
+========================= */
+
+.teacher-profile .profile-card h2 {
+    color: #1565c0;
+}
+
+
+/* =========================
+   TEACHER ROLE
+========================= */
+
+.teacher-profile .teacher-role {
+    color: #1976d2;
+    font-weight: 600;
+}
+
+
+/* =========================
+   TEACHER INFORMATION
+========================= */
+
+.teacher-profile .teacher-info {
+    background: #ffffff;
+
+    padding: 30px;
+
+    border-radius: 25px;
+
+    margin-top: 30px;
+    margin-bottom: 25px;
+
+    border-left: 6px solid #2196f3;
+
+    box-shadow:
+        0 10px 30px rgba(33, 150, 243, 0.10);
+}
+
+
+/* =========================
+   INFO TITLE
+========================= */
+
+.teacher-profile .teacher-info h2 {
+    color: #1565c0;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   INFO CONTENT
+========================= */
+
+.teacher-profile .teacher-info-content p {
+    color: #444;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    margin: 5px 0;
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+.teacher-profile .teacher-status {
+    color: #2e7d32;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   WELCOME
+========================= */
+
+.teacher-profile .teacher-welcome {
+    background: linear-gradient(
+        135deg,
+        #e3f2fd,
+        #f5faff
+    );
+
+    padding: 30px;
+
+    border-radius: 25px;
+
+    border-left: 6px solid #2196f3;
+
+    box-shadow:
+        0 10px 30px rgba(33, 150, 243, 0.10);
+}
+
+
+/* =========================
+   WELCOME TITLE
+========================= */
+
+.teacher-profile .teacher-welcome h2 {
+    color: #1565c0;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   WELCOME TEXT
+========================= */
+
+.teacher-profile .teacher-welcome p {
+    color: #456;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    .teacher-profile {
+
+        margin-left: 0;
+
+        padding: 25px;
+
+    }
+
+
+    .teacher-profile .profile-card {
+
+        padding: 25px;
+
+    }
+
+
+    .teacher-profile .teacher-info,
+    .teacher-profile .teacher-welcome {
+
+        padding: 20px;
+
+    }
+
+}

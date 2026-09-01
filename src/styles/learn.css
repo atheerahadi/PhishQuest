@@ -1,0 +1,320 @@
+.learn-page {
+
+    margin-left: 240px;
+
+    padding: 40px;
+
+    background: #FFF8E7;
+
+    min-height: 100vh;
+
+    box-sizing: border-box;
+
+    overflow-x: hidden;
+
+    position: relative;
+
+    z-index: 1;
+
+}
+
+
+.learn-page h1 {
+
+    font-size: 40px;
+
+    margin-bottom: 10px;
+
+    color: #333;
+
+}
+
+
+.subtitle {
+
+    color: #666;
+
+    margin-bottom: 35px;
+
+    font-size: 17px;
+
+}
+
+
+/* =========================
+   GRID
+========================= */
+
+.learn-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(320px, 1fr)
+        );
+
+    gap: 25px;
+
+    width: 100%;
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.learn-card {
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 10px 25px
+        rgba(0, 0, 0, 0.08);
+
+    transition: 0.3s;
+
+    position: relative;
+
+    z-index: 3;
+
+    pointer-events: auto;
+
+    box-sizing: border-box;
+
+}
+
+
+.learn-card:hover {
+
+    transform: translateY(-8px);
+
+}
+
+
+/* =========================
+   ICON
+========================= */
+
+.lesson-icon {
+
+    width: 70px;
+
+    height: 70px;
+
+    border-radius: 18px;
+
+    background: #FFE7B5;
+
+    color: #ff8a00;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 32px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.learn-card h2 {
+
+    margin-bottom: 15px;
+
+    color: #333;
+
+}
+
+
+/* =========================
+   INFO
+========================= */
+
+.lesson-info {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 18px;
+
+}
+
+
+.lesson-info span {
+
+    background: #FFF5D8;
+
+    color: #ff8a00;
+
+    padding: 6px 14px;
+
+    border-radius: 30px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+}
+
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.learn-card p {
+
+    line-height: 1.7;
+
+    color: #555;
+
+    margin-bottom: 15px;
+
+}
+
+
+/* =========================
+   VIDEO STATUS
+========================= */
+
+.video-status {
+
+    color: #333;
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    margin-bottom: 15px;
+
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.learn-card button {
+
+    width: 100%;
+
+    border: none;
+
+    background: #ff8a00;
+
+    color: white;
+
+    padding: 14px;
+
+    border-radius: 14px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+
+    position: relative;
+
+    z-index: 10;
+
+    pointer-events: auto;
+
+}
+
+
+.learn-card button:hover {
+
+    background: #ff9800;
+
+    transform: translateY(-2px);
+
+}
+
+
+.learn-card button:active {
+
+    transform: scale(0.98);
+
+}
+
+
+/* =========================
+   OVERLAY FIX
+========================= */
+
+.learn-page,
+.learn-grid,
+.learn-card {
+
+    pointer-events: auto;
+
+}
+
+
+.learn-card::before,
+.learn-card::after {
+
+    pointer-events: none;
+
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    .learn-page {
+
+        margin-left: 0;
+
+        padding: 25px;
+
+    }
+
+
+    .learn-page h1 {
+
+        font-size: 30px;
+
+    }
+
+
+    .learn-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .lesson-info {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+}

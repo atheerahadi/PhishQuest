@@ -1,0 +1,808 @@
+/* =========================================================
+   MANUAL PAGE
+========================================================= */
+
+.manual-page {
+    margin-left: 240px;
+
+    min-height: 100vh;
+
+    padding: 40px;
+
+    background: #f8f7ff;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.manual-header {
+    max-width: 1200px;
+
+    margin: 0 auto 30px;
+
+    padding: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+
+    background: white;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, .08);
+
+    box-sizing: border-box;
+}
+
+
+.manual-header-icon {
+    width: 80px;
+
+    height: 80px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #fff0cf;
+
+    border-radius: 20px;
+
+    font-size: 42px;
+}
+
+
+.manual-label {
+    margin: 0 0 5px;
+
+    color: #ff8c00;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+.manual-header h1 {
+    margin: 0 0 6px;
+
+    color: #173f6f;
+
+    font-size: 38px;
+}
+
+
+.manual-header p {
+    margin: 0;
+
+    color: #666;
+
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   CARD GRID
+========================================================= */
+
+.manual-grid {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   MANUAL CARD
+========================================================= */
+
+.manual-menu-card {
+    position: relative;
+
+    min-height: 210px;
+
+    padding: 25px 18px;
+
+    border: none;
+
+    border-radius: 22px;
+
+    background: white;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, .07);
+
+    cursor: pointer;
+
+    text-align: center;
+
+    transition: .25s;
+
+    box-sizing: border-box;
+
+    font-family: inherit;
+}
+
+
+.manual-menu-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, .12);
+}
+
+
+.manual-card-number {
+    position: absolute;
+
+    top: 12px;
+
+    right: 15px;
+
+    width: 30px;
+
+    height: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #fff0cf;
+
+    color: #ff8c00;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+
+.manual-card-icon {
+    font-size: 48px;
+
+    margin-top: 10px;
+
+    margin-bottom: 15px;
+}
+
+
+.manual-menu-card h2 {
+    margin: 0 auto 15px;
+
+    color: #173f6f;
+
+    font-size: 19px;
+
+    line-height: 1.35;
+}
+
+
+.manual-menu-card span {
+    color: #6655ee;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   DETAIL MANUAL
+========================================================= */
+
+.manual-detail {
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    padding: 32px 40px 38px;
+
+    background: white;
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, .08);
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.manual-back {
+    border: none;
+
+    background: #f1efff;
+
+    color: #6655ee;
+
+    padding: 10px 17px;
+
+    border-radius: 11px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .2s;
+
+    font-family: inherit;
+}
+
+
+.manual-back:hover {
+    background: #e5e1ff;
+
+    transform: translateX(-2px);
+}
+
+
+/* =========================================================
+   DETAIL ICON
+========================================================= */
+
+.manual-detail-icon {
+    width: 75px;
+
+    height: 75px;
+
+    margin: 28px auto 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #fff0cf;
+
+    border-radius: 20px;
+
+    font-size: 43px;
+}
+
+
+/* =========================================================
+   DETAIL NUMBER
+========================================================= */
+
+.manual-detail-number {
+    margin-top: 5px;
+
+    text-align: center;
+
+    color: #ff8c00;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* =========================================================
+   DETAIL TITLE
+========================================================= */
+
+.manual-detail h2 {
+    margin: 7px 0 25px;
+
+    text-align: center;
+
+    color: #173f6f;
+
+    font-size: 31px;
+
+    line-height: 1.3;
+}
+
+
+/* =========================================================
+   DETAIL CONTENT
+========================================================= */
+
+.manual-detail-content {
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    color: #444;
+
+    font-size: 16px;
+
+    line-height: 1.75;
+}
+
+
+.manual-detail-content p {
+    margin: 12px 0 18px;
+}
+
+
+.manual-detail-content ol,
+.manual-detail-content ul {
+    margin: 15px 0;
+
+    padding-left: 25px;
+}
+
+
+.manual-detail-content li {
+    margin-bottom: 10px;
+
+    padding-left: 4px;
+}
+
+
+.manual-detail-content strong {
+    color: #173f6f;
+}
+
+
+/* =========================================================
+   SAFETY TIP
+========================================================= */
+
+.manual-tip {
+    max-width: 1200px;
+
+    margin: 30px auto 0;
+
+    padding: 22px 28px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 18px;
+
+    background: #fff4d6;
+
+    border-left: 6px solid orange;
+
+    border-radius: 20px;
+
+    box-sizing: border-box;
+}
+
+
+.manual-tip-icon {
+    font-size: 35px;
+
+    flex-shrink: 0;
+}
+
+
+.manual-tip h2 {
+    margin: 0 0 8px;
+
+    color: #173f6f;
+
+    font-size: 20px;
+}
+
+
+.manual-tip p {
+    margin: 0;
+
+    color: #555;
+
+    line-height: 1.7;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .manual-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================================
+   PHONE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .manual-page {
+        margin-left: 0;
+
+        width: 100%;
+
+        min-width: 0;
+
+        padding: 20px 12px 30px;
+
+        overflow-x: hidden;
+
+        box-sizing: border-box;
+    }
+
+
+    /* ================= HEADER ================= */
+
+    .manual-header {
+        width: 100%;
+
+        padding: 22px 18px;
+
+        margin-bottom: 20px;
+
+        border-radius: 20px;
+
+        gap: 15px;
+    }
+
+
+    .manual-header-icon {
+        width: 60px;
+
+        height: 60px;
+
+        border-radius: 16px;
+
+        font-size: 32px;
+    }
+
+
+    .manual-label {
+        font-size: 10px;
+
+        letter-spacing: 1px;
+    }
+
+
+    .manual-header h1 {
+        font-size: 27px;
+
+        line-height: 1.2;
+    }
+
+
+    .manual-header p {
+        font-size: 14px;
+
+        line-height: 1.4;
+    }
+
+
+    /* ================= GRID ================= */
+
+    .manual-grid {
+        width: 100%;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 10px;
+    }
+
+
+    /* ================= CARD ================= */
+
+    .manual-menu-card {
+        width: 100%;
+
+        min-width: 0;
+
+        min-height: 155px;
+
+        padding: 18px 10px;
+
+        border-radius: 17px;
+
+        box-sizing: border-box;
+    }
+
+
+    .manual-menu-card:hover {
+        transform: none;
+    }
+
+
+    .manual-card-number {
+        width: 25px;
+
+        height: 25px;
+
+        top: 8px;
+
+        right: 8px;
+
+        font-size: 11px;
+    }
+
+
+    .manual-card-icon {
+        font-size: 35px;
+
+        margin-top: 5px;
+
+        margin-bottom: 8px;
+    }
+
+
+    .manual-menu-card h2 {
+        font-size: 15px;
+
+        line-height: 1.3;
+
+        margin-bottom: 8px;
+    }
+
+
+    .manual-menu-card span {
+        font-size: 11px;
+    }
+
+
+    /* ================= DETAIL ================= */
+
+    .manual-detail {
+        width: 100%;
+
+        padding: 22px 18px;
+
+        border-radius: 20px;
+
+        box-sizing: border-box;
+    }
+
+
+    .manual-detail-icon {
+        width: 65px;
+
+        height: 65px;
+
+        margin-top: 22px;
+
+        font-size: 38px;
+    }
+
+
+    .manual-detail-number {
+        font-size: 11px;
+    }
+
+
+    .manual-detail h2 {
+        font-size: 25px;
+
+        line-height: 1.3;
+
+        margin-bottom: 18px;
+    }
+
+
+    .manual-detail-content {
+        font-size: 14px;
+
+        line-height: 1.7;
+    }
+
+
+    .manual-detail-content ol,
+    .manual-detail-content ul {
+        padding-left: 20px;
+    }
+
+
+    /* ================= TIP ================= */
+
+    .manual-tip {
+        width: 100%;
+
+        margin-top: 20px;
+
+        padding: 18px;
+
+        gap: 12px;
+
+        border-radius: 16px;
+
+        box-sizing: border-box;
+    }
+
+
+    .manual-tip-icon {
+        font-size: 28px;
+    }
+
+
+    .manual-tip h2 {
+        font-size: 18px;
+    }
+
+
+    .manual-tip p {
+        font-size: 13px;
+
+        line-height: 1.6;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .manual-page {
+        padding: 15px 10px 25px;
+    }
+
+
+    /* ================= HEADER ================= */
+
+    .manual-header {
+        padding: 18px 14px;
+
+        gap: 12px;
+    }
+
+
+    .manual-header-icon {
+        width: 52px;
+
+        height: 52px;
+
+        font-size: 28px;
+    }
+
+
+    .manual-label {
+        font-size: 9px;
+    }
+
+
+    .manual-header h1 {
+        font-size: 23px;
+    }
+
+
+    .manual-header p {
+        font-size: 12px;
+    }
+
+
+    /* ================= GRID ================= */
+
+    .manual-grid {
+        gap: 8px;
+    }
+
+
+    /* ================= CARD ================= */
+
+    .manual-menu-card {
+        min-height: 140px;
+
+        padding: 15px 8px;
+
+        border-radius: 15px;
+    }
+
+
+    .manual-card-number {
+        width: 23px;
+
+        height: 23px;
+
+        top: 7px;
+
+        right: 7px;
+    }
+
+
+    .manual-card-icon {
+        font-size: 30px;
+
+        margin-bottom: 6px;
+    }
+
+
+    .manual-menu-card h2 {
+        font-size: 13px;
+
+        margin-bottom: 6px;
+    }
+
+
+    .manual-menu-card span {
+        font-size: 10px;
+    }
+
+
+    /* ================= DETAIL ================= */
+
+    .manual-detail {
+        padding: 18px 15px;
+    }
+
+
+    .manual-detail-icon {
+        width: 58px;
+
+        height: 58px;
+
+        font-size: 34px;
+    }
+
+
+    .manual-detail h2 {
+        font-size: 22px;
+    }
+
+
+    .manual-detail-content {
+        font-size: 13px;
+
+        line-height: 1.65;
+    }
+
+
+    /* ================= TIP ================= */
+
+    .manual-tip {
+        padding: 16px 13px;
+
+        margin-top: 15px;
+    }
+
+
+    .manual-tip h2 {
+        font-size: 17px;
+    }
+
+
+    .manual-tip p {
+        font-size: 12px;
+
+        line-height: 1.5;
+    }
+
+}
