@@ -303,11 +303,11 @@ function Login() {
 
         {/* LOGO */}
 
-        <img
-          src="/src/assets/mascot/mascot.png"
-          alt="Maskot PhishQuest"
-          className="mascot"
-        />
+<img
+  src={mascot}
+  alt="Maskot PhishQuest"
+  className="mascot"
+/>
 
 
         {/* TITLE */}
