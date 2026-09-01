@@ -1550,10 +1550,11 @@ function Teacher() {
 
         <div className="teacher-table ranking-section">
 
-          <h2>
-            🏆 Ranking Pelajar
-          </h2>
+  <h2>
+    🏆 Ranking Pelajar
+  </h2>
 
+  <div className="ranking-table-wrapper">
 
           <table>
 
@@ -1673,6 +1674,8 @@ function Teacher() {
 
 
       </div>
+
+   </div>
 
 
 

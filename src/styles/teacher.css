@@ -23,7 +23,6 @@
     margin-bottom: 30px;
 }
 
-
 .teacher-label {
     display: inline-block;
     margin-bottom: 8px;
@@ -33,13 +32,11 @@
     letter-spacing: 1.5px;
 }
 
-
 .teacher-header h1 {
     margin: 0 0 10px;
     color: #174a7c;
     font-size: 38px;
 }
-
 
 .teacher-header .subtitle {
     margin: 0;
@@ -48,13 +45,11 @@
     line-height: 1.6;
 }
 
-
 .teacher-actions {
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
 }
-
 
 .refresh-btn,
 .report-btn {
@@ -67,20 +62,17 @@
     transition: 0.2s;
 }
 
-
 .refresh-btn {
     background: white;
     color: #1976d2;
     border: 1px solid #c7def5;
 }
 
-
 .report-btn {
     background: #1976d2;
     color: white;
     box-shadow: 0 5px 15px rgba(25, 118, 210, 0.2);
 }
-
 
 .refresh-btn:hover,
 .report-btn:hover {
@@ -99,7 +91,6 @@
     margin-bottom: 30px;
 }
 
-
 .teacher-card {
     background: white;
     border-radius: 22px;
@@ -110,7 +101,6 @@
     box-shadow: 0 8px 25px rgba(30, 90, 140, 0.08);
     border: 1px solid #dcecfb;
 }
-
 
 .card-icon {
     width: 60px;
@@ -125,14 +115,12 @@
     flex-shrink: 0;
 }
 
-
 .teacher-card p {
     margin: 0 0 7px;
     color: #71859a;
     font-size: 14px;
     font-weight: 600;
 }
-
 
 .teacher-card h2 {
     margin: 0;
@@ -155,23 +143,19 @@
     border: 1px solid #dcecfb;
 }
 
-
 .section-title {
     margin-bottom: 25px;
 }
-
 
 .section-title h2 {
     margin: 0 0 7px;
     color: #174a7c;
 }
 
-
 .section-title p {
     margin: 0;
     color: #71859a;
 }
-
 
 .statistics-grid {
     display: grid;
@@ -191,7 +175,6 @@
     border: 1px solid #e0eef9;
 }
 
-
 .section-card-icon {
     width: 45px;
     height: 45px;
@@ -205,13 +188,11 @@
     margin-bottom: 15px;
 }
 
-
 .stat-chart-card h3,
 .benchmark-card h3 {
     margin: 0 0 20px;
     color: #174a7c;
 }
-
 
 .big-stat {
     color: #1976d2;
@@ -219,7 +200,6 @@
     font-weight: 800;
     margin-bottom: 15px;
 }
-
 
 .average-progress {
     width: 100%;
@@ -230,7 +210,6 @@
     margin-bottom: 15px;
 }
 
-
 .average-progress-fill {
     height: 100%;
     border-radius: 20px;
@@ -240,7 +219,6 @@
         #1976d2
     );
 }
-
 
 .stat-chart-card p {
     margin: 0;
@@ -260,7 +238,6 @@
     border: 1px solid #e0eef9;
 }
 
-
 .benchmark-row {
     display: grid;
     grid-template-columns: 140px 1fr 35px;
@@ -269,19 +246,16 @@
     margin-bottom: 17px;
 }
 
-
 .benchmark-row span {
     color: #526b80;
     font-size: 14px;
     font-weight: 600;
 }
 
-
 .benchmark-row strong {
     color: #174a7c;
     text-align: right;
 }
-
 
 .benchmark-bar {
     height: 9px;
@@ -290,32 +264,26 @@
     overflow: hidden;
 }
 
-
 .benchmark-fill {
     height: 100%;
     border-radius: 20px;
 }
 
-
 .benchmark-fill.excellent {
     background: #1976d2;
 }
-
 
 .benchmark-fill.good {
     background: #42a5f5;
 }
 
-
 .benchmark-fill.satisfactory {
     background: #64b5f6;
 }
 
-
 .benchmark-fill.basic {
     background: #90caf9;
 }
-
 
 .benchmark-fill.needs-help {
     background: #1565c0;
@@ -334,18 +302,15 @@
     margin-bottom: 20px;
 }
 
-
 .table-heading h2 {
     margin: 0 0 6px;
     color: #174a7c;
 }
 
-
 .table-heading p {
     margin: 0;
     color: #71859a;
 }
-
 
 .student-count,
 .attempt-count {
@@ -365,14 +330,13 @@
 .table-wrapper {
     width: 100%;
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
-
 
 .teacher-table table {
     width: 100%;
     border-collapse: collapse;
 }
-
 
 .teacher-table th {
     padding: 15px;
@@ -383,7 +347,6 @@
     font-weight: 800;
 }
 
-
 .teacher-table td {
     padding: 17px 15px;
     border-bottom: 1px solid #edf3f8;
@@ -391,11 +354,9 @@
     font-size: 14px;
 }
 
-
 .teacher-table tbody tr:hover {
     background: #f8fcff;
 }
-
 
 .teacher-table td strong {
     color: #174a7c;
@@ -410,12 +371,10 @@
     min-width: 120px;
 }
 
-
 .percentage-cell > span {
     color: #1976d2;
     font-weight: 800;
 }
-
 
 .mini-progress {
     width: 100%;
@@ -425,7 +384,6 @@
     background: #e7eff6;
     overflow: hidden;
 }
-
 
 .mini-progress div {
     height: 100%;
@@ -459,17 +417,14 @@
     color: #71859a;
 }
 
-
 .student-progress {
     padding: 22px 0;
     border-bottom: 1px solid #edf3f8;
 }
 
-
 .student-progress:last-child {
     border-bottom: none;
 }
-
 
 .student-progress-header {
     display: flex;
@@ -479,32 +434,27 @@
     margin-bottom: 15px;
 }
 
-
 .student-progress-header div {
     display: flex;
     flex-direction: column;
     gap: 4px;
 }
 
-
 .student-progress-header strong {
     color: #174a7c;
     font-size: 16px;
 }
-
 
 .student-progress-header span {
     color: #8193a3;
     font-size: 13px;
 }
 
-
 .progress-attempts {
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
-
 
 .attempt-row {
     display: grid;
@@ -513,13 +463,11 @@
     gap: 12px;
 }
 
-
 .attempt-label {
     color: #61798d;
     font-size: 13px;
     font-weight: 600;
 }
-
 
 .attempt-bar {
     height: 9px;
@@ -527,7 +475,6 @@
     border-radius: 20px;
     overflow: hidden;
 }
-
 
 .attempt-fill {
     height: 100%;
@@ -539,25 +486,21 @@
     );
 }
 
-
 .attempt-row strong {
     color: #1976d2;
     text-align: right;
 }
-
 
 .no-attempt {
     color: #8a9aa8;
     font-size: 14px;
 }
 
-
 .empty-progress {
     padding: 50px;
     text-align: center;
     color: #71859a;
 }
-
 
 .empty-progress span {
     font-size: 40px;
@@ -574,6 +517,44 @@
 
 
 /* =========================
+   RANKING TABLE
+========================= */
+
+.ranking-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.ranking-table-wrapper table {
+    width: 100%;
+    min-width: 650px;
+    border-collapse: collapse;
+}
+
+.ranking-table-wrapper th {
+    padding: 15px;
+    text-align: left;
+    background: #f1f8fe;
+    color: #48647b;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.ranking-table-wrapper td {
+    padding: 17px 15px;
+    border-bottom: 1px solid #edf3f8;
+    color: #5e7284;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.ranking-table-wrapper tbody tr:hover {
+    background: #f8fcff;
+}
+
+
+/* =========================
    RESPONSIVE
 ========================= */
 
@@ -582,7 +563,6 @@
     .teacher-stats {
         grid-template-columns: 1fr;
     }
-
 
     .statistics-grid {
         grid-template-columns: 1fr;
@@ -596,24 +576,23 @@
     .teacher-page {
         margin-left: 0;
         padding: 25px;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
     }
-
 
     .teacher-header {
         flex-direction: column;
         align-items: flex-start;
     }
 
-
     .teacher-header h1 {
         font-size: 30px;
     }
 
-
     .teacher-actions {
         width: 100%;
     }
-
 
     .refresh-btn,
     .report-btn {
@@ -626,264 +605,567 @@
 @media (max-width: 700px) {
 
     .teacher-page {
-        padding: 20px;
+        padding: 20px 15px 40px;
     }
-
 
     .statistics-section,
     .teacher-table {
         padding: 20px;
+        border-radius: 20px;
     }
 
+    .teacher-header {
+        gap: 15px;
+        margin-bottom: 22px;
+    }
+
+    .teacher-header h1 {
+        font-size: 28px;
+        line-height: 1.25;
+    }
+
+    .teacher-header .subtitle {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .teacher-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .refresh-btn,
+    .report-btn {
+        width: 100%;
+        flex: none;
+    }
+
+
+    /* STATISTICS */
+
+    .teacher-stats {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .teacher-card {
+        padding: 20px;
+        border-radius: 18px;
+    }
+
+    .card-icon {
+        width: 52px;
+        height: 52px;
+        font-size: 24px;
+    }
+
+    .teacher-card h2 {
+        font-size: 27px;
+    }
+
+
+    /* STATISTICS SECTION */
+
+    .statistics-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .stat-chart-card,
+    .benchmark-card {
+        padding: 20px;
+    }
+
+    .big-stat {
+        font-size: 42px;
+    }
+
+
+    /* BENCHMARK */
 
     .benchmark-row {
         grid-template-columns: 1fr;
         gap: 7px;
     }
 
-
     .benchmark-row strong {
         text-align: left;
     }
 
 
-    .attempt-row {
-        grid-template-columns: 80px 1fr 40px;
-    }
-
+    /* TABLE HEADER */
 
     .table-heading {
         align-items: flex-start;
         flex-direction: column;
+        gap: 10px;
+    }
+
+    .table-heading h2 {
+        font-size: 21px;
+        line-height: 1.3;
+    }
+
+    .table-heading p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+
+    /* NORMAL TABLES */
+
+    .table-wrapper {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .table-wrapper table {
+        min-width: 650px;
+    }
+
+    .teacher-table th,
+    .teacher-table td {
+        padding: 12px 10px;
+        font-size: 13px;
+    }
+
+
+    /* RANKING */
+
+    .ranking-section {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    .ranking-section h2 {
+        font-size: 22px;
+        line-height: 1.3;
+        margin-bottom: 18px;
+    }
+
+    .ranking-table-wrapper {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        border-radius: 12px;
+    }
+
+    .ranking-table-wrapper table {
+        width: 100%;
+        min-width: 620px;
+    }
+
+    .ranking-table-wrapper th,
+    .ranking-table-wrapper td {
+        padding: 12px 10px;
+        font-size: 13px;
+        vertical-align: middle;
+    }
+
+
+    /* PROGRESS */
+
+    .attempt-row {
+        grid-template-columns: 80px 1fr 40px;
+        gap: 8px;
+    }
+
+    .attempt-label {
+        font-size: 12px;
     }
 
 }
+
+
+/* =========================
+   VERY SMALL PHONE
+========================= */
+
+@media (max-width: 480px) {
+
+    .teacher-page {
+        padding: 18px 10px 35px;
+    }
+
+    .teacher-header h1 {
+        font-size: 25px;
+    }
+
+    .teacher-header .subtitle {
+        font-size: 13px;
+    }
+
+    .statistics-section,
+    .teacher-table {
+        padding: 16px 12px;
+        border-radius: 18px;
+    }
+
+
+    /* STATISTICS */
+
+    .teacher-card {
+        padding: 17px;
+        gap: 13px;
+    }
+
+    .card-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 22px;
+        border-radius: 14px;
+    }
+
+    .teacher-card p {
+        font-size: 12px;
+    }
+
+    .teacher-card h2 {
+        font-size: 25px;
+    }
+
+
+    /* SECTIONS */
+
+    .section-title h2 {
+        font-size: 20px;
+    }
+
+    .section-title p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .stat-chart-card,
+    .benchmark-card {
+        padding: 17px;
+    }
+
+    .big-stat {
+        font-size: 38px;
+    }
+
+
+    /* RANKING */
+
+    .ranking-section {
+        padding: 16px 10px;
+    }
+
+    .ranking-section h2 {
+        font-size: 20px;
+    }
+
+    .ranking-table-wrapper table {
+        min-width: 580px;
+    }
+
+    .ranking-table-wrapper th,
+    .ranking-table-wrapper td {
+        padding: 10px 8px;
+        font-size: 12px;
+    }
+
+
+    /* NORMAL TABLE */
+
+    .table-wrapper table {
+        min-width: 620px;
+    }
+
+    .teacher-table th,
+    .teacher-table td {
+        padding: 10px 8px;
+        font-size: 12px;
+    }
+
+
+    /* PROGRESS */
+
+    .attempt-row {
+        grid-template-columns: 70px 1fr 35px;
+        gap: 6px;
+    }
+
+    .attempt-label {
+        font-size: 11px;
+    }
+
+    .attempt-row strong {
+        font-size: 12px;
+    }
+
+
+    /* EMPTY */
+
+    .empty-progress {
+        padding: 35px 15px;
+    }
+
+}
+
+
+/* =========================
+   STUDENT DETAIL MODAL
+========================= */
+
 .student-modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(15, 23, 42, 0.6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  z-index: 9999;
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 9999;
 }
 
 .student-modal {
-  width: min(900px, 95vw);
-  max-height: 90vh;
-  overflow-y: auto;
-  background: #ffffff;
-  border-radius: 24px;
-  padding: 30px;
-  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.25);
+    width: min(900px, 95vw);
+    max-height: 90vh;
+    overflow-y: auto;
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.25);
 }
 
 .student-modal-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 20px;
-  margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 25px;
 }
 
 .student-modal-header h2 {
-  margin: 0 0 6px;
+    margin: 0 0 6px;
 }
 
 .student-modal-header p {
-  margin: 0;
-  color: #64748b;
+    margin: 0;
+    color: #64748b;
 }
 
 .modal-close {
-  width: 40px;
-  height: 40px;
-  border: none;
-  border-radius: 50%;
-  background: #eff6ff;
-  color: #1d4ed8;
-  font-size: 20px;
-  cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: #eff6ff;
+    color: #1d4ed8;
+    font-size: 20px;
+    cursor: pointer;
 }
 
 .student-summary-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
 }
 
 .student-summary-card {
-  padding: 20px;
-  background: #eff6ff;
-  border-radius: 16px;
-  text-align: center;
+    padding: 20px;
+    background: #eff6ff;
+    border-radius: 16px;
+    text-align: center;
 }
 
 .student-summary-card span {
-  display: block;
-  margin-bottom: 8px;
-  color: #64748b;
-  font-size: 14px;
+    display: block;
+    margin-bottom: 8px;
+    color: #64748b;
+    font-size: 14px;
 }
 
 .student-summary-card strong {
-  display: block;
-  color: #1d4ed8;
-  font-size: 20px;
+    display: block;
+    color: #1d4ed8;
+    font-size: 20px;
 }
 
 .student-detail-section {
-  margin-top: 30px;
+    margin-top: 30px;
 }
 
 .student-detail-section h3 {
-  margin-bottom: 18px;
-  color: #1e3a8a;
+    margin-bottom: 18px;
+    color: #1e3a8a;
 }
 
 .detail-progress-header {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
 }
 
 .detail-progress-bar {
-  height: 12px;
-  background: #e5e7eb;
-  border-radius: 20px;
-  overflow: hidden;
+    height: 12px;
+    background: #e5e7eb;
+    border-radius: 20px;
+    overflow: hidden;
 }
 
 .detail-progress-bar div {
-  height: 100%;
-  background: #2196f3;
-  border-radius: 20px;
-  transition: width 0.4s ease;
+    height: 100%;
+    background: #2196f3;
+    border-radius: 20px;
+    transition: width 0.4s ease;
 }
 
 .detail-progress-text {
-  margin-top: 8px;
-  color: #64748b;
-  font-size: 14px;
+    margin-top: 8px;
+    color: #64748b;
+    font-size: 14px;
 }
 
 .completed-module-list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
 }
 
 .completed-module-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 14px 16px;
-  background: #f0fdf4;
-  border: 1px solid #bbf7d0;
-  border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 16px;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 12px;
 }
 
 .completed-module-item strong {
-  color: #166534;
+    color: #166534;
 }
 
 .completed-module-item span {
-  color: #64748b;
-  font-size: 13px;
+    color: #64748b;
+    font-size: 13px;
 }
 
 .student-quiz-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
 }
 
 .student-quiz-grid div {
-  padding: 18px;
-  background: #f8fafc;
-  border-radius: 14px;
-  text-align: center;
+    padding: 18px;
+    background: #f8fafc;
+    border-radius: 14px;
+    text-align: center;
 }
 
 .student-quiz-grid span {
-  display: block;
-  color: #64748b;
-  font-size: 14px;
-  margin-bottom: 8px;
+    display: block;
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 8px;
 }
 
 .student-quiz-grid strong {
-  display: block;
-  color: #1d4ed8;
-  font-size: 20px;
+    display: block;
+    color: #1d4ed8;
+    font-size: 20px;
 }
 
 .quiz-history {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .quiz-history-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  padding: 15px 16px;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  background: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 15px 16px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    background: #ffffff;
 }
 
 .quiz-history-item > div:first-child {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .quiz-history-item span {
-  color: #64748b;
-  font-size: 13px;
+    color: #64748b;
+    font-size: 13px;
 }
 
 .quiz-history-score {
-  text-align: right;
+    text-align: right;
 }
 
 .quiz-history-score strong {
-  display: block;
-  color: #1d4ed8;
-  font-size: 18px;
-  margin-bottom: 4px;
+    display: block;
+    color: #1d4ed8;
+    font-size: 18px;
+    margin-bottom: 4px;
 }
 
 .modal-footer {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 30px;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
 }
+
+
+/* =========================
+   MODAL RESPONSIVE
+========================= */
 
 @media (max-width: 700px) {
 
-  .student-summary-grid,
-  .student-quiz-grid {
-    grid-template-columns: 1fr;
-  }
+    .student-modal-overlay {
+        padding: 12px;
+    }
 
-  .student-modal {
-    padding: 20px;
-  }
+    .student-summary-grid,
+    .student-quiz-grid {
+        grid-template-columns: 1fr;
+    }
 
-  .completed-module-item,
-  .quiz-history-item {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+    .student-modal {
+        width: 100%;
+        max-width: 100%;
+        max-height: 92vh;
+        padding: 20px;
+        border-radius: 20px;
+    }
 
-  .quiz-history-score {
-    text-align: left;
-  }
+    .student-modal-header {
+        gap: 10px;
+    }
+
+    .student-modal-header h2 {
+        font-size: 22px;
+        word-break: break-word;
+    }
+
+    .student-modal-header p {
+        font-size: 13px;
+        word-break: break-word;
+    }
+
+    .completed-module-item,
+    .quiz-history-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .quiz-history-score {
+        text-align: left;
+    }
 
 }
