@@ -5,7 +5,6 @@ import { supabase } from "../services/supabase";
 import "../styles/login.css";
 
 function Login() {
-
   const navigate = useNavigate();
 
   const [username, setUsername] = useState("");
@@ -15,18 +14,14 @@ function Login() {
   const [errorMessage, setErrorMessage] = useState("");
   const [loading, setLoading] = useState(false);
 
-
   async function handleLogin(e) {
-
     e.preventDefault();
 
     setErrorMessage("");
     setLoading(true);
 
     try {
-
       if (!username.trim() || !password) {
-
         setErrorMessage(
           "❌ Sila masukkan username dan kata laluan."
         );
@@ -35,7 +30,6 @@ function Login() {
 
         return;
       }
-
 
       // =========================
       // GET EMAIL USING USERNAME
@@ -51,7 +45,6 @@ function Login() {
         }
       );
 
-
       console.log(
         "LOGIN USERNAME:",
         username
@@ -62,9 +55,7 @@ function Login() {
         email
       );
 
-
       if (usernameError || !email) {
-
         console.error(
           "Username tidak dijumpai:",
           usernameError
@@ -79,7 +70,6 @@ function Login() {
         return;
       }
 
-
       // =========================
       // LOGIN SUPABASE AUTH
       // =========================
@@ -88,16 +78,11 @@ function Login() {
         data: authData,
         error: authError
       } = await supabase.auth.signInWithPassword({
-
         email: email,
-
         password: password
-
       });
 
-
       if (authError) {
-
         console.error(
           "Login error:",
           authError
@@ -112,12 +97,10 @@ function Login() {
         return;
       }
 
-
       console.log(
         "AUTH USER:",
         authData.user
       );
-
 
       // =========================
       // GET PROFILE
@@ -137,9 +120,7 @@ function Login() {
         )
         .single();
 
-
       if (profileError || !profile) {
-
         console.error(
           "Profile tidak dijumpai:",
           profileError
@@ -156,12 +137,10 @@ function Login() {
         return;
       }
 
-
       console.log(
         "PROFILE LOGIN:",
         profile
       );
-
 
       // =========================
       // GET ACTUAL ROLE
@@ -173,7 +152,6 @@ function Login() {
           .trim()
           .toLowerCase();
 
-
       console.log(
         "SELECTED ROLE:",
         selectedRole
@@ -184,7 +162,6 @@ function Login() {
         actualRole
       );
 
-
       // =========================
       // CHECK SELECTED ROLE
       // =========================
@@ -192,30 +169,24 @@ function Login() {
       if (
         selectedRole !== actualRole
       ) {
-
         await supabase.auth.signOut();
 
         if (
           selectedRole === "teacher"
         ) {
-
           setErrorMessage(
             "❌ Akaun ini bukan akaun cikgu."
           );
-
         } else {
-
           setErrorMessage(
             "❌ Akaun ini bukan akaun pelajar."
           );
-
         }
 
         setLoading(false);
 
         return;
       }
-
 
       // =========================
       // TEACHER
@@ -224,7 +195,6 @@ function Login() {
       if (
         actualRole === "teacher"
       ) {
-
         console.log(
           "Redirecting to Teacher Dashboard..."
         );
@@ -239,7 +209,6 @@ function Login() {
         return;
       }
 
-
       // =========================
       // STUDENT
       // =========================
@@ -247,7 +216,6 @@ function Login() {
       if (
         actualRole === "student"
       ) {
-
         console.log(
           "Redirecting to Student Dashboard..."
         );
@@ -262,7 +230,6 @@ function Login() {
         return;
       }
 
-
       // =========================
       // UNKNOWN ROLE
       // =========================
@@ -273,9 +240,7 @@ function Login() {
         "❌ Role akaun tidak sah."
       );
 
-
     } catch (error) {
-
       console.error(
         "Login error:",
         error
@@ -284,31 +249,23 @@ function Login() {
       setErrorMessage(
         "❌ Berlaku masalah semasa log masuk."
       );
-
     } finally {
-
       setLoading(false);
-
     }
-
   }
 
-
   return (
-
     <div className="login-container">
 
       <div className="login-card">
 
-
         {/* LOGO */}
 
-<img
-  src={mascot}
-  alt="Maskot PhishQuest"
-  className="mascot"
-/>
-
+        <img
+          src="/mascot.png"
+          alt="Maskot PhishQuest"
+          className="mascot"
+        />
 
         {/* TITLE */}
 
@@ -316,18 +273,15 @@ function Login() {
           Selamat Datang ke PhishQuest
         </h1>
 
-
         <p>
           Bijak Bertindak. Kekal Selamat.
         </p>
-
 
         {/* LOGIN FORM */}
 
         <form
           onSubmit={handleLogin}
         >
-
 
           {/* USERNAME */}
 
@@ -343,7 +297,6 @@ function Login() {
             autoComplete="username"
           />
 
-
           {/* PASSWORD */}
 
           <input
@@ -357,7 +310,6 @@ function Login() {
             }
             autoComplete="current-password"
           />
-
 
           {/* ACCOUNT TYPE */}
 
@@ -389,17 +341,13 @@ function Login() {
 
           </div>
 
-
           {/* ERROR */}
 
           {errorMessage && (
-
             <p className="login-error">
               {errorMessage}
             </p>
-
           )}
-
 
           {/* LOGIN BUTTON */}
 
@@ -407,37 +355,28 @@ function Login() {
             type="submit"
             disabled={loading}
           >
-
             {loading
               ? "⏳ Log Masuk..."
               : "Log Masuk"
             }
-
           </button>
 
-
         </form>
-
 
         {/* REGISTER */}
 
         <p>
-
           Belum mempunyai akaun?{" "}
 
           <Link to="/register">
             Daftar
           </Link>
-
         </p>
-
 
       </div>
 
     </div>
-
   );
-
 }
 
 export default Login;
