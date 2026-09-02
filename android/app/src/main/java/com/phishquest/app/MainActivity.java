@@ -1,0 +1,5 @@
+package com.phishquest.app;
+
+import com.getcapacitor.BridgeActivity;
+
+public class MainActivity extends BridgeActivity {}
