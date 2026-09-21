@@ -804,3 +804,864 @@
     }
 
 }
+/* =========================================================
+   PHISHQUEST - LEARNING PROGRESS CARD
+   ========================================================= */
+
+.learningProgressCard {
+  position: relative;
+
+  width: 100%;
+
+  padding: 35px 38px;
+
+  box-sizing: border-box;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #fffdf8 55%,
+      #fff8e8 100%
+    );
+
+  border-radius: 28px;
+
+  box-shadow:
+    0 12px 35px rgba(120, 85, 20, 0.10);
+
+  overflow: hidden;
+
+  margin-bottom: 30px;
+}
+
+
+/* Decorative glow */
+
+.learningProgressCard::after {
+  content: "";
+
+  position: absolute;
+
+  width: 320px;
+  height: 320px;
+
+  right: -120px;
+  top: -160px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(245, 190, 60, 0.18),
+      transparent 68%
+    );
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   PROGRESS HEADER
+   ========================================================= */
+
+.learningProgressHeader {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-bottom: 22px;
+}
+
+.learningProgressIcon {
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      145deg,
+      #fff4c9,
+      #f5cf69
+    );
+
+  font-size: 29px;
+
+  box-shadow:
+    0 5px 15px
+    rgba(192, 137, 28, 0.15);
+}
+
+.learningProgressHeader h2 {
+  margin: 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 30px;
+
+  color: #202020;
+}
+
+.learningProgressHeader p {
+  margin: 4px 0 0;
+
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size: 14px;
+
+  color: #777;
+}
+
+
+/* =========================================================
+   PROGRESS BAR
+   ========================================================= */
+
+.learningProgressBarWrapper {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  height: 20px;
+
+  margin-bottom: 25px;
+
+  border-radius: 50px;
+
+  background: #eeeeee;
+
+  padding: 4px;
+
+  box-sizing: border-box;
+
+  box-shadow:
+    inset 0 2px 5px
+    rgba(0, 0, 0, 0.08);
+}
+
+.learningProgressBar {
+  height: 100%;
+
+  width: 0%;
+
+  border-radius: 50px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #f6b51c,
+      #d88b0b
+    );
+
+  transition:
+    width 0.7s ease;
+
+  box-shadow:
+    0 2px 8px
+    rgba(220, 150, 15, 0.3);
+}
+
+
+/* =========================================================
+   PROGRESS INFORMATION
+   ========================================================= */
+
+.learningProgressInfo {
+  position: relative;
+
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 20px;
+
+  margin-top: 5px;
+}
+
+.learningProgressStat {
+  padding: 22px;
+
+  border-radius: 18px;
+
+  border: 1px solid #eee1c2;
+
+  background:
+    rgba(255, 252, 242, 0.85);
+}
+
+.learningProgressStatLabel {
+  display: block;
+
+  margin-bottom: 6px;
+
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  color: #8a7650;
+
+  text-transform: uppercase;
+}
+
+.learningProgressStatValue {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 28px;
+
+  font-weight: 700;
+
+  color: #222;
+}
+
+.learningProgressStatValue.completed {
+  color: #a9781e;
+}
+
+
+/* =========================================================
+   CERTIFICATE CARD
+   ========================================================= */
+
+.certificateDashboardCard {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 360px;
+
+  padding: 38px;
+
+  box-sizing: border-box;
+
+  display: grid;
+
+  grid-template-columns:
+    1.05fr 0.95fr;
+
+  align-items: center;
+
+  gap: 30px;
+
+  overflow: hidden;
+
+  border-radius: 28px;
+
+  border: 2px solid #d49a23;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fffdf7 0%,
+      #fff8e8 55%,
+      #fdf0ce 100%
+    );
+
+  box-shadow:
+    0 15px 35px
+    rgba(143, 100, 20, 0.12);
+
+  margin-bottom: 30px;
+}
+
+
+/* Decorative background */
+
+.certificateDashboardCard::before {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  right: -220px;
+  top: -190px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(235, 178, 44, 0.16),
+      transparent 68%
+    );
+
+  pointer-events: none;
+}
+
+.certificateDashboardCard::after {
+  content: "";
+
+  position: absolute;
+
+  width: 350px;
+  height: 350px;
+
+  left: 40%;
+
+  bottom: -250px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(239, 193, 82, 0.13),
+      transparent 70%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   CERTIFICATE LEFT CONTENT
+   ========================================================= */
+
+.certificateDashboardContent {
+  position: relative;
+
+  z-index: 2;
+}
+
+.certificateDashboardTitle {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 18px;
+}
+
+.certificateDashboardTitleIcon {
+  font-size: 38px;
+}
+
+.certificateDashboardTitle h2 {
+  margin: 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 32px;
+
+  color: #1f1f1f;
+}
+
+.certificateDashboardLine {
+  width: 100%;
+
+  max-width: 520px;
+
+  height: 2px;
+
+  margin: 10px 0 25px;
+
+  background:
+    linear-gradient(
+      to right,
+      #d59b2b,
+      rgba(213, 155, 43, 0)
+    );
+}
+
+
+/* =========================================================
+   CONGRATULATIONS
+   ========================================================= */
+
+.certificateCongrats {
+  margin-bottom: 18px;
+}
+
+.certificateCongrats h3 {
+  margin: 0 0 7px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 25px;
+
+  color: #a9781e;
+}
+
+.certificateCongrats p {
+  margin: 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 17px;
+
+  line-height: 1.55;
+
+  color: #444;
+}
+
+
+/* =========================================================
+   COMPLETION MINI CARD
+   ========================================================= */
+
+.certificateCompletionBox {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  max-width: 520px;
+
+  padding: 18px 22px;
+
+  border-radius: 18px;
+
+  background:
+    rgba(255,255,255,0.72);
+
+  border: 1px solid #ead7aa;
+
+  margin-bottom: 22px;
+}
+
+.certificateCompletionIcon {
+  width: 55px;
+  height: 55px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      145deg,
+      #fff0b7,
+      #e7ad26
+    );
+
+  font-size: 27px;
+}
+
+.certificateCompletionText span {
+  display: block;
+
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  color: #777;
+
+  text-transform: uppercase;
+}
+
+.certificateCompletionText strong {
+  display: block;
+
+  margin-top: 4px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 25px;
+
+  color: #222;
+}
+
+.certificateCompletionText small {
+  display: block;
+
+  margin-top: 2px;
+
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size: 13px;
+
+  color: #8b6b2c;
+}
+
+
+/* =========================================================
+   VIEW CERTIFICATE BUTTON
+   ========================================================= */
+
+.certificateViewButton {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  padding: 14px 28px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f4b51c,
+      #c98408
+    );
+
+  color: white;
+
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 18px
+    rgba(194, 132, 10, 0.25);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.certificateViewButton:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 11px 24px
+    rgba(194, 132, 10, 0.32);
+}
+
+.certificateViewButton:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   CERTIFICATE VISUAL RIGHT
+   ========================================================= */
+
+.certificateDashboardVisual {
+  position: relative;
+
+  z-index: 2;
+
+  min-height: 290px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+
+/* Certificate paper */
+
+.certificatePaperPreview {
+  position: relative;
+
+  width: 220px;
+
+  height: 270px;
+
+  padding: 22px;
+
+  box-sizing: border-box;
+
+  border-radius: 8px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #fffefa,
+      #fff5da
+    );
+
+  border: 3px solid #d29a28;
+
+  box-shadow:
+    0 18px 30px
+    rgba(85, 60, 15, 0.18);
+
+  transform:
+    rotate(4deg);
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  text-align: center;
+}
+
+
+/* Certificate inner border */
+
+.certificatePaperPreview::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 8px;
+
+  border: 1px solid #e3bd63;
+
+  pointer-events: none;
+}
+
+
+/* Preview logo */
+
+.certificatePaperLogo {
+  font-size: 25px;
+
+  margin-top: 8px;
+}
+
+.certificatePaperPreview h4 {
+  margin: 13px 0 4px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 20px;
+
+  letter-spacing: 1px;
+
+  color: #a9781e;
+}
+
+.certificatePaperPreview p {
+  margin: 5px 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 11px;
+
+  color: #555;
+}
+
+.certificatePaperName {
+  margin: 13px 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 17px;
+
+  font-weight: 700;
+
+  color: #222;
+}
+
+.certificatePaperSeal {
+  margin-top: auto;
+
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffd969,
+      #c98b15
+    );
+
+  border: 2px solid #b37b13;
+
+  font-size: 20px;
+}
+
+
+/* =========================================================
+   LOCKED CERTIFICATE
+   ========================================================= */
+
+.certificateDashboardLocked {
+  position: relative;
+
+  width: 100%;
+
+  padding: 28px;
+
+  box-sizing: border-box;
+
+  border-radius: 24px;
+
+  background:
+    rgba(255,255,255,0.75);
+
+  border: 1px solid #eadfc9;
+}
+
+.certificateDashboardLocked h2 {
+  margin: 0 0 8px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 25px;
+}
+
+.certificateDashboardLocked p {
+  margin: 0;
+
+  color: #777;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .certificateDashboardCard {
+    grid-template-columns: 1fr;
+
+    text-align: center;
+
+    padding: 30px;
+  }
+
+  .certificateDashboardTitle {
+    justify-content: center;
+  }
+
+  .certificateDashboardLine {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .certificateCompletionBox {
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: left;
+  }
+
+  .certificateDashboardVisual {
+    min-height: 250px;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .learningProgressCard {
+    padding: 25px 20px;
+
+    border-radius: 20px;
+  }
+
+  .learningProgressHeader h2 {
+    font-size: 24px;
+  }
+
+  .learningProgressInfo {
+    grid-template-columns: 1fr;
+  }
+
+  .certificateDashboardCard {
+    padding: 24px 18px;
+
+    border-radius: 22px;
+  }
+
+  .certificateDashboardTitle h2 {
+    font-size: 25px;
+  }
+
+  .certificateCongrats h3 {
+    font-size: 22px;
+  }
+
+  .certificateCongrats p {
+    font-size: 15px;
+  }
+
+  .certificatePaperPreview {
+    width: 190px;
+    height: 235px;
+  }
+
+  .certificateViewButton {
+    width: 100%;
+  }
+}

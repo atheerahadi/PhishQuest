@@ -27,6 +27,8 @@ import Lesson from "./pages/Lesson";
 import PPD from "./pages/PPD";
 import Manual from "./pages/Manual";
 
+import Certificate from "./pages/Certificate";
+
 import ProtectedRoute from "./components/ProtectedRoute";
 
 import { MusicProvider } from "./pages/MusicContext";
@@ -35,6 +37,10 @@ import { AIAssistantProvider } from "./context/AIAssistantContext";
 import FloatingAIAssistant
   from "./components/FloatingAIAssistant/FloatingAIAssistant";
 
+
+// =========================================================
+// APP CONTENT
+// =========================================================
 
 function AppContent() {
 
@@ -59,24 +65,27 @@ function AppContent() {
       <Routes>
 
 
-        {/* =========================
+        {/* =================================================
             PUBLIC ROUTES
-        ========================= */}
+        ================================================= */}
 
         <Route
           path="/"
           element={<Login />}
         />
 
+
         <Route
           path="/register"
           element={<Register />}
         />
 
+
         <Route
           path="/about"
           element={<About />}
         />
+
 
         <Route
           path="/contact"
@@ -84,9 +93,9 @@ function AppContent() {
         />
 
 
-        {/* =========================
+        {/* =================================================
             STUDENT ROUTES
-        ========================= */}
+        ================================================= */}
 
         <Route
           path="/dashboard"
@@ -158,6 +167,20 @@ function AppContent() {
         />
 
 
+        {/* =================================================
+            CERTIFICATE
+        ================================================= */}
+
+        <Route
+          path="/certificate"
+          element={
+            <ProtectedRoute allowedRole="student">
+              <Certificate />
+            </ProtectedRoute>
+          }
+        />
+
+
         <Route
           path="/ppd"
           element={
@@ -168,9 +191,9 @@ function AppContent() {
         />
 
 
-        {/* =========================
+        {/* =================================================
             TEACHER ROUTE
-        ========================= */}
+        ================================================= */}
 
         <Route
           path="/teacher"
@@ -182,9 +205,9 @@ function AppContent() {
         />
 
 
-        {/* =========================
+        {/* =================================================
             SHARED PROFILE
-        ========================= */}
+        ================================================= */}
 
         <Route
           path="/profile"
@@ -196,22 +219,24 @@ function AppContent() {
         />
 
 
-        {/* =========================
+        {/* =================================================
             MANUAL
-        ========================= */}
+        ================================================= */}
 
         <Route
           path="/manual"
-          element={<Manual />}
+          element={
+            <Manual />
+          }
         />
 
 
       </Routes>
 
 
-      {/* =========================
+      {/* =================================================
           AI ASSISTANT
-      ========================= */}
+      ================================================= */}
 
       {!hideAI && (
         <FloatingAIAssistant />
@@ -225,24 +250,35 @@ function AppContent() {
 }
 
 
+// =========================================================
+// MAIN APP
+// =========================================================
+
 function App() {
 
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] =
+    useState(true);
 
 
   useEffect(() => {
 
-    const timer = setTimeout(() => {
+    const timer =
+      setTimeout(() => {
 
-      setLoading(false);
+        setLoading(false);
 
-    }, 2000);
+      }, 2000);
 
 
-    return () => clearTimeout(timer);
+    return () =>
+      clearTimeout(timer);
 
   }, []);
 
+
+  // =======================================================
+  // LOADING SCREEN
+  // =======================================================
 
   if (loading) {
 
@@ -250,6 +286,10 @@ function App() {
 
   }
 
+
+  // =======================================================
+  // APP PROVIDERS
+  // =======================================================
 
   return (
 

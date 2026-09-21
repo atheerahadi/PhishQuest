@@ -12,7 +12,10 @@ function Teacher() {
   const TOTAL_MODULES = 6;
 
 
-  const [students, setStudents] = useState([]);
+ const [students, setStudents] = useState([]);
+
+// Kelas yang diajar oleh teacher yang sedang login
+const [teacherClasses, setTeacherClasses] = useState([]);
 
   const [totalStudents, setTotalStudents] =
     useState(0);
@@ -52,64 +55,181 @@ function Teacher() {
   }, []);
 
 
-  async function loadTeacherData() {
+ async function loadTeacherData() {
+  setLoading(true);
 
-    setLoading(true);
+  try {
+    // ==========================================
+    // 1. GET CURRENT LOGGED-IN TEACHER
+    // ==========================================
 
-    try {
+    const {
+      data: { user },
+      error: userError,
+    } = await supabase.auth.getUser();
 
-      /*
-      ==========================================
-      GET STUDENTS
-      ==========================================
-      */
+    if (userError || !user) {
+      console.error("Gagal mendapatkan user:", userError);
 
+      setStudents([]);
+      setTeacherClasses([]);
+      setTotalStudents(0);
+      setTotalQuizzes(0);
+      setTotalCompletedModules(0);
+      setTotalXP(0);
+      setAverageXp(0);
+      setAverageMark(0);
+
+      return;
+    }
+
+    // ==========================================
+    // 2. GET CLASSES ASSIGNED TO THIS TEACHER
+    // ==========================================
+
+    const {
+      data: teacherClassRows,
+      error: teacherClassError,
+    } = await supabase
+      .from("teacher_classes")
+      .select("class_id")
+      .eq("teacher_id", user.id);
+
+    if (teacherClassError) {
+      console.error(
+        "Gagal ambil kelas guru:",
+        teacherClassError
+      );
+
+      setTeacherClasses([]);
+      setStudents([]);
+      setTotalStudents(0);
+      setTotalQuizzes(0);
+      setTotalCompletedModules(0);
+      setTotalXP(0);
+      setAverageXp(0);
+      setAverageMark(0);
+
+      return;
+    }
+
+    // ==========================================
+    // 3. GET CLASS IDS
+    // ==========================================
+
+    const classIds = (teacherClassRows || []).map(
+      (item) => Number(item.class_id)
+    );
+
+    console.log("Teacher ID:", user.id);
+    console.log("Teacher Class IDs:", classIds);
+
+    // ==========================================
+    // 4. GET CLASS INFORMATION
+    // ==========================================
+
+    let assignedClasses = [];
+
+    if (classIds.length > 0) {
       const {
-        data: profiles,
-        error: profileError
+        data: classData,
+        error: classError,
       } = await supabase
+        .from("classes")
+        .select("id, class_name, year_level")
+        .in("id", classIds);
 
-        .from("profiles")
-
-        .select(
-          "id, name, email, role, total_xp"
-        )
-
-        .eq(
-          "role",
-          "student"
-        );
-
-
-      if (profileError) {
-
+      if (classError) {
         console.error(
-          "Gagal ambil profiles:",
-          profileError
+          "Gagal ambil class information:",
+          classError
         );
-
-        setLoading(false);
-
-        return;
-
+      } else {
+        assignedClasses = classData || [];
       }
+    }
 
+    setTeacherClasses(assignedClasses);
 
-      /*
-      ==========================================
-      GET QUIZ RESULTS
-      ==========================================
-      */
+    console.log(
+      "Teacher Classes:",
+      assignedClasses
+    );
 
+    // ==========================================
+    // 5. IF TEACHER HAS NO CLASS
+    // ==========================================
+
+    if (classIds.length === 0) {
+      setStudents([]);
+      setTotalStudents(0);
+      setTotalQuizzes(0);
+      setTotalCompletedModules(0);
+      setTotalXP(0);
+      setAverageXp(0);
+      setAverageMark(0);
+
+      return;
+    }
+
+    // ==========================================
+    // 6. GET STUDENTS FROM TEACHER'S CLASSES ONLY
+    // ==========================================
+
+    const {
+      data: profiles,
+      error: profileError,
+    } = await supabase
+      .from("profiles")
+      .select(`
+        id,
+        name,
+        email,
+        role,
+        total_xp,
+        class_id
+      `)
+      .eq("role", "student")
+      .in("class_id", classIds);
+
+    if (profileError) {
+      console.error(
+        "Gagal ambil student profiles:",
+        profileError
+      );
+
+      setStudents([]);
+      return;
+    }
+
+    const studentProfiles = profiles || [];
+
+    console.log(
+      "Students for teacher:",
+      studentProfiles
+    );
+
+    // ==========================================
+    // 7. GET STUDENT IDS
+    // ==========================================
+
+    const studentIds = studentProfiles.map(
+      (student) => student.id
+    );
+
+    // ==========================================
+    // 8. GET QUIZ RESULTS
+    // ==========================================
+
+    let quizResults = [];
+
+    if (studentIds.length > 0) {
       const {
-        data: results,
-        error: quizError
+        data: quizData,
+        error: quizError,
       } = await supabase
-
         .from("quiz_results")
-
-        .select(
-          `
+        .select(`
           profile_id,
           score,
           total_questions,
@@ -117,400 +237,280 @@ function Teacher() {
           xp_earned,
           benchmark,
           created_at
-          `
-        )
-
-        .order(
-          "created_at",
-          {
-            ascending: false
-          }
-        );
-
+        `)
+        .in("profile_id", studentIds)
+        .order("created_at", {
+          ascending: false,
+        });
 
       if (quizError) {
-
         console.error(
           "Gagal ambil quiz results:",
           quizError
         );
-
-        setLoading(false);
-
-        return;
-
+      } else {
+        quizResults = quizData || [];
       }
+    }
 
+    // ==========================================
+    // 9. GET MODULE PROGRESS
+    // ==========================================
 
-      /*
-      ==========================================
-      GET MODULE PROGRESS
-      ==========================================
-      */
+    let moduleProgress = [];
 
+    if (studentIds.length > 0) {
       const {
-        data: moduleProgress,
-        error: moduleError
+        data: moduleData,
+        error: moduleError,
       } = await supabase
-
         .from("module_progress")
-
-        .select(
-          `
+        .select(`
           profile_id,
           module_id,
           module_name,
           completed,
           completed_at
-          `
-        )
-
-        .eq(
-          "completed",
-          true
-        );
-
+        `)
+        .eq("completed", true)
+        .in("profile_id", studentIds);
 
       if (moduleError) {
-
         console.error(
           "Gagal ambil module progress:",
           moduleError
         );
-
-        setLoading(false);
-
-        return;
-
+      } else {
+        moduleProgress = moduleData || [];
       }
-
-
-      /*
-      ==========================================
-      QUIZ BY STUDENT
-      ==========================================
-      */
-
-      const quizzesByStudent = {};
-
-
-      (results || []).forEach(
-        (result) => {
-
-          if (
-            !quizzesByStudent[
-              result.profile_id
-            ]
-          ) {
-
-            quizzesByStudent[
-              result.profile_id
-            ] = [];
-
-          }
-
-
-          quizzesByStudent[
-            result.profile_id
-          ].push(result);
-
-        }
-      );
-
-
-      /*
-      ==========================================
-      MODULE BY STUDENT
-      ==========================================
-      */
-
-      const modulesByStudent = {};
-
-
-      (moduleProgress || []).forEach(
-        (module) => {
-
-          if (
-            !modulesByStudent[
-              module.profile_id
-            ]
-          ) {
-
-            modulesByStudent[
-              module.profile_id
-            ] = [];
-
-          }
-
-
-          modulesByStudent[
-            module.profile_id
-          ].push(module);
-
-        }
-      );
-
-
-      /*
-      ==========================================
-      CREATE STUDENT DATA
-      ==========================================
-      */
-
-      const studentData =
-        (profiles || []).map(
-          (profile) => {
-
-            const quizzes =
-              quizzesByStudent[
-                profile.id
-              ] || [];
-
-
-            const completedModules =
-              modulesByStudent[
-                profile.id
-              ] || [];
-
-
-            const moduleCount =
-              completedModules.length;
-
-
-            const modulePercentage =
-              Math.round(
-                (
-                  moduleCount /
-                  TOTAL_MODULES
-                ) * 100
-              );
-
-
-            const xp =
-              profile.total_xp || 0;
-
-
-            const latestQuiz =
-              quizzes.length > 0
-                ? quizzes[0]
-                : null;
-
-
-            const bestQuiz =
-              quizzes.length > 0
-                ? [...quizzes].sort(
-                    (a, b) =>
-                      (b.percentage || 0) -
-                      (a.percentage || 0)
-                  )[0]
-                : null;
-
-
-            return {
-
-              id:
-                profile.id,
-
-              name:
-                profile.name ||
-                "Tidak diketahui",
-
-              email:
-                profile.email ||
-                "-",
-
-              xp:
-                xp,
-
-              completedModules:
-                completedModules,
-
-              moduleCount:
-                moduleCount,
-
-              modulePercentage:
-                modulePercentage,
-
-              quizzes:
-                quizzes,
-
-              quizCount:
-                quizzes.length,
-
-              latestQuiz:
-                latestQuiz,
-
-              bestQuiz:
-                bestQuiz,
-
-              score:
-                latestQuiz
-                  ? `${latestQuiz.score} / ${latestQuiz.total_questions}`
-                  : "Belum menjawab",
-
-              percentage:
-                latestQuiz
-                  ? latestQuiz.percentage || 0
-                  : 0,
-
-              benchmark:
-                latestQuiz
-                  ? latestQuiz.benchmark ||
-                    "Belum ada"
-                  : "Belum ada"
-
-            };
-
-          }
-        );
-
-
-      setStudents(
-        studentData
-      );
-
-
-      /*
-      ==========================================
-      TOTAL STUDENTS
-      ==========================================
-      */
-
-      setTotalStudents(
-        studentData.length
-      );
-
-
-      /*
-      ==========================================
-      TOTAL QUIZZES
-      ==========================================
-      */
-
-      setTotalQuizzes(
-        (results || []).length
-      );
-
-
-      /*
-      ==========================================
-      TOTAL MODULES
-      ==========================================
-      */
-
-      const completedModuleTotal =
-        studentData.reduce(
-          (
-            total,
-            student
-          ) =>
-            total +
-            student.moduleCount,
-          0
-        );
-
-
-      setTotalCompletedModules(
-        completedModuleTotal
-      );
-
-
-      /*
-      ==========================================
-      TOTAL XP
-      ==========================================
-      */
-
-      const xpTotal =
-        studentData.reduce(
-          (
-            total,
-            student
-          ) =>
-            total +
-            student.xp,
-          0
-        );
-
-
-      setTotalXP(
-        xpTotal
-      );
-
-
-      /*
-      ==========================================
-      AVERAGE XP
-      ==========================================
-      */
-
-      setAverageXp(
-
-        studentData.length > 0
-
-          ? Math.round(
-              xpTotal /
-              studentData.length
-            )
-
-          : 0
-
-      );
-
-
-      /*
-      ==========================================
-      AVERAGE MARK
-      ==========================================
-      */
-
-      const percentages =
-        (results || []).map(
-          (result) =>
-            result.percentage || 0
-        );
-
-
-      const percentageTotal =
-        percentages.reduce(
-          (
-            total,
-            percentage
-          ) =>
-            total +
-            percentage,
-          0
-        );
-
-
-      setAverageMark(
-
-        percentages.length > 0
-
-          ? Math.round(
-              percentageTotal /
-              percentages.length
-            )
-
-          : 0
-
-      );
-
-
-    } catch (error) {
-
-      console.error(
-        "Teacher dashboard error:",
-        error
-      );
-
-    } finally {
-
-      setLoading(false);
-
     }
 
+    // ==========================================
+    // 10. GROUP QUIZ RESULTS
+    // ==========================================
+
+    const quizzesByStudent = {};
+
+    quizResults.forEach((quiz) => {
+      if (!quizzesByStudent[quiz.profile_id]) {
+        quizzesByStudent[quiz.profile_id] = [];
+      }
+
+      quizzesByStudent[quiz.profile_id].push(quiz);
+    });
+
+    // ==========================================
+    // 11. GROUP MODULE PROGRESS
+    // ==========================================
+
+    const modulesByStudent = {};
+
+    moduleProgress.forEach((module) => {
+      if (!modulesByStudent[module.profile_id]) {
+        modulesByStudent[module.profile_id] = [];
+      }
+
+      modulesByStudent[module.profile_id].push(module);
+    });
+
+    // ==========================================
+    // 12. CREATE STUDENT DATA
+    // ==========================================
+
+    const studentData = studentProfiles.map(
+      (profile) => {
+        const quizzes =
+          quizzesByStudent[profile.id] || [];
+
+        const completedModules =
+          modulesByStudent[profile.id] || [];
+
+        const moduleCount =
+          completedModules.length;
+
+        const modulePercentage =
+          TOTAL_MODULES > 0
+            ? Math.round(
+                (moduleCount / TOTAL_MODULES) * 100
+              )
+            : 0;
+
+        const xp = profile.total_xp || 0;
+
+        const latestQuiz =
+          quizzes.length > 0
+            ? quizzes[0]
+            : null;
+
+        const bestQuiz =
+          quizzes.length > 0
+            ? [...quizzes].sort(
+                (a, b) =>
+                  (b.percentage || 0) -
+                  (a.percentage || 0)
+              )[0]
+            : null;
+
+        // Find student's class
+        const studentClass =
+          assignedClasses.find(
+            (item) =>
+              Number(item.id) ===
+              Number(profile.class_id)
+          );
+
+        return {
+          id: profile.id,
+
+          name:
+            profile.name ||
+            "Tidak diketahui",
+
+          email:
+            profile.email ||
+            "-",
+
+          classId:
+            profile.class_id,
+
+          className:
+            studentClass?.class_name ||
+            "Tidak diketahui",
+
+          xp,
+
+          completedModules,
+
+          moduleCount,
+
+          modulePercentage,
+
+          quizzes,
+
+          quizCount:
+            quizzes.length,
+
+          latestQuiz,
+
+          bestQuiz,
+
+          score:
+            latestQuiz
+              ? `${latestQuiz.score} / ${latestQuiz.total_questions}`
+              : "Belum menjawab",
+
+          percentage:
+            latestQuiz
+              ? latestQuiz.percentage || 0
+              : 0,
+
+          benchmark:
+            latestQuiz
+              ? latestQuiz.benchmark ||
+                "Belum ada"
+              : "Belum ada",
+        };
+      }
+    );
+
+    // ==========================================
+    // 13. SET STUDENTS
+    // ==========================================
+
+    setStudents(studentData);
+
+    // ==========================================
+    // 14. TOTAL STUDENTS
+    // ==========================================
+
+    setTotalStudents(
+      studentData.length
+    );
+
+    // ==========================================
+    // 15. TOTAL QUIZZES
+    // ==========================================
+
+    setTotalQuizzes(
+      quizResults.length
+    );
+
+    // ==========================================
+    // 16. TOTAL COMPLETED MODULES
+    // ==========================================
+
+    const completedModuleTotal =
+      studentData.reduce(
+        (total, student) =>
+          total + student.moduleCount,
+        0
+      );
+
+    setTotalCompletedModules(
+      completedModuleTotal
+    );
+
+    // ==========================================
+    // 17. TOTAL XP
+    // ==========================================
+
+    const xpTotal =
+      studentData.reduce(
+        (total, student) =>
+          total + student.xp,
+        0
+      );
+
+    setTotalXP(xpTotal);
+
+    // ==========================================
+    // 18. AVERAGE XP
+    // ==========================================
+
+    setAverageXp(
+      studentData.length > 0
+        ? Math.round(
+            xpTotal /
+            studentData.length
+          )
+        : 0
+    );
+
+    // ==========================================
+    // 19. AVERAGE MARK
+    // ==========================================
+
+    const percentages =
+      quizResults.map(
+        (quiz) =>
+          quiz.percentage || 0
+      );
+
+    const percentageTotal =
+      percentages.reduce(
+        (total, percentage) =>
+          total + percentage,
+        0
+      );
+
+    setAverageMark(
+      percentages.length > 0
+        ? Math.round(
+            percentageTotal /
+            percentages.length
+          )
+        : 0
+    );
+
+  } catch (error) {
+    console.error(
+      "Teacher dashboard error:",
+      error
+    );
+  } finally {
+    setLoading(false);
   }
+}
 
 
   /*

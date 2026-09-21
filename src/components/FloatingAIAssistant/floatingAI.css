@@ -1,39 +1,66 @@
+/* =========================================================
+   PHISHBOT FLOATING BUTTON
+========================================================= */
+
 .phishbot-button {
   position: fixed;
   right: 25px;
   bottom: 25px;
 
-  width: 75px;
-  height: 75px;
+  width: 60px;
+  height: 60px;
 
   border: none;
+  outline: none;
+
   background: white;
   border-radius: 50%;
 
-  padding: 8px;
-
+  padding: 5px;
   cursor: pointer;
 
   z-index: 9999;
 
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  box-shadow:
+    0 5px 20px rgba(0, 0, 0, 0.20);
 
-  transition: 0.3s;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-.phishbot-button:hover {
-  transform: scale(1.1);
-}
+
+/* PHISHBOT IMAGE */
 
 .phishbot-button img {
-  width: 100%;
-  height: 100%;
+  width: 48px;
+  height: 48px;
+
   object-fit: contain;
+
+  display: block;
+  margin: auto;
 }
+
+
+/* HOVER */
+
+.phishbot-button:hover {
+  transform: scale(1.08);
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================================
+   ATTENTION ANIMATION
+========================================================= */
 
 .phishbot-attention {
   animation: phishbotBounce 1s infinite;
 }
+
 
 @keyframes phishbotBounce {
 
@@ -48,13 +75,20 @@
 
 }
 
+
+/* =========================================================
+   HELP POPUP
+========================================================= */
+
 .phishbot-help {
   position: fixed;
 
-  right: 30px;
-  bottom: 115px;
+  right: 25px;
+  bottom: 100px;
 
   width: 300px;
+
+  max-width: calc(100vw - 40px);
 
   background: white;
 
@@ -62,10 +96,16 @@
 
   padding: 20px;
 
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
 
-  z-index: 9999;
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.20);
+
+  z-index: 9998;
 }
+
+
+/* HELP CLOSE */
 
 .help-close {
   position: absolute;
@@ -73,13 +113,35 @@
   right: 12px;
   top: 10px;
 
+  width: 30px;
+  height: 30px;
+
   border: none;
+  outline: none;
+
   background: transparent;
 
-  font-size: 20px;
+  font-size: 24px;
+
+  line-height: 1;
 
   cursor: pointer;
+
+  color: #333;
 }
+
+
+.help-close:hover {
+  color: #6c63ff;
+}
+
+
+/* HELP CONTENT */
+
+.help-content {
+  padding-right: 20px;
+}
+
 
 .help-content strong {
   display: block;
@@ -87,20 +149,30 @@
   font-size: 18px;
 
   margin-bottom: 8px;
+
+  color: #222;
 }
+
 
 .help-content p {
   font-size: 14px;
 
   line-height: 1.5;
 
+  margin-top: 0;
   margin-bottom: 15px;
+
+  color: #444;
 }
+
+
+/* HELP BUTTON */
 
 .help-button {
   width: 100%;
 
   border: none;
+  outline: none;
 
   padding: 12px;
 
@@ -113,28 +185,188 @@
   font-weight: bold;
 
   cursor: pointer;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
 }
+
 
 .help-button:hover {
   opacity: 0.9;
+
+  transform: translateY(-1px);
 }
 
+
+/* =========================================================
+   BOTPRESS CHAT
+========================================================= */
+
 .phishbot-chat {
-  position: fixed;
+  position: fixed !important;
 
-  right: 25px;
-  bottom: 110px;
+  right: 25px !important;
+  bottom: 100px !important;
 
-  width: 390px;
-  height: 600px;
+  width: 380px !important;
+  height: 520px !important;
 
-  z-index: 9998;
+  max-width: calc(100vw - 40px) !important;
+  max-height: calc(100vh - 125px) !important;
 
-  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
 
-  overflow: hidden;
-
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  z-index: 9998 !important;
 
   background: white;
+
+  border-radius: 20px !important;
+
+  overflow: hidden !important;
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .phishbot-button {
+    right: 18px;
+    bottom: 18px;
+
+    width: 58px;
+    height: 58px;
+
+    padding: 5px;
+  }
+
+
+  .phishbot-button img {
+    width: 46px;
+    height: 46px;
+  }
+
+
+  .phishbot-help {
+    right: 18px;
+    bottom: 88px;
+
+    width: 300px;
+  }
+
+
+  .phishbot-chat {
+    right: 16px !important;
+    bottom: 88px !important;
+
+    width: 360px !important;
+    height: 500px !important;
+
+    max-width: calc(100vw - 32px) !important;
+    max-height: calc(100vh - 105px) !important;
+
+    border-radius: 18px !important;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .phishbot-button {
+    right: 14px;
+    bottom: 14px;
+
+    width: 55px;
+    height: 55px;
+
+    padding: 4px;
+  }
+
+
+  .phishbot-button img {
+    width: 45px;
+    height: 45px;
+  }
+
+
+  .phishbot-help {
+    left: 15px;
+    right: 15px;
+
+    bottom: 80px;
+
+    width: auto;
+
+    max-width: none;
+
+    padding: 18px;
+
+    border-radius: 18px;
+  }
+
+
+  .phishbot-chat {
+    left: 12px !important;
+    right: 12px !important;
+
+    bottom: 78px !important;
+
+    width: auto !important;
+
+    height: calc(100vh - 100px) !important;
+
+    max-width: none !important;
+
+    max-height: calc(100vh - 100px) !important;
+
+    border-radius: 18px !important;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .phishbot-button {
+    width: 52px;
+    height: 52px;
+
+    right: 12px;
+    bottom: 12px;
+  }
+
+
+  .phishbot-button img {
+    width: 42px;
+    height: 42px;
+  }
+
+
+  .phishbot-chat {
+    left: 10px !important;
+    right: 10px !important;
+
+    bottom: 72px !important;
+
+    height: calc(100vh - 90px) !important;
+
+    max-height: calc(100vh - 90px) !important;
+  }
+
 }

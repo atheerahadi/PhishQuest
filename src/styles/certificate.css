@@ -1,0 +1,3313 @@
+/* =========================================================
+   PHISHQUEST CERTIFICATE
+   Cute + Formal + Institutional
+========================================================= */
+
+.certificatePage {
+  min-height: 100vh;
+
+  padding: 30px;
+
+  box-sizing: border-box;
+
+  background:
+    radial-gradient(
+      circle at top,
+      #fffdf8 0%,
+      #f7f0e3 50%,
+      #eee4d0 100%
+    );
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.certificateActions {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 25px;
+}
+
+.certificateAction {
+  border: none;
+
+  border-radius: 10px;
+
+  padding: 11px 20px;
+
+  background: #f3a21b;
+
+  color: white;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.certificateAction:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.certificateAction.secondary {
+  background: white;
+
+  color: #333;
+
+  border: 1px solid #d5d5d5;
+}
+
+
+/* =========================================================
+   OUTER GOLD FRAME
+========================================================= */
+
+.certificateOuter {
+  position: relative;
+
+  width: 100%;
+
+  max-width: 1100px;
+
+  min-height: 700px;
+
+  margin: 0 auto;
+
+  padding: 16px;
+
+  box-sizing: border-box;
+
+  background:
+    linear-gradient(
+      135deg,
+      #c99632,
+      #f1cf76,
+      #c18d29
+    );
+
+  box-shadow:
+    0 18px 45px
+    rgba(70, 50, 15, 0.18);
+}
+
+
+/* =========================================================
+   INNER CERTIFICATE
+========================================================= */
+
+.certificateInner {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 668px;
+
+  box-sizing: border-box;
+
+  padding: 35px 50px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at center,
+      #fffefa 0%,
+      #fffaf1 72%,
+      #fff6e5 100%
+    );
+
+  border: 3px solid #222;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+
+/* =========================================================
+   INNER GOLD BORDER
+========================================================= */
+
+.certificateInner::before {
+  content: "";
+
+  position: absolute;
+
+  top: 13px;
+  left: 13px;
+  right: 13px;
+  bottom: 13px;
+
+  border: 1px solid #d3a03b;
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+
+/* =========================================================
+   SECOND INNER BORDER
+========================================================= */
+
+.certificateInner::after {
+  content: "";
+
+  position: absolute;
+
+  top: 19px;
+  left: 19px;
+  right: 19px;
+  bottom: 19px;
+
+  border: 1px solid
+    rgba(210, 160, 60, 0.25);
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+
+/* =========================================================
+   DECORATIVE STARS
+========================================================= */
+
+.decorStar {
+  position: absolute;
+
+  z-index: 2;
+
+  color: #d2a03b;
+
+  pointer-events: none;
+
+  font-family:
+    Georgia,
+    serif;
+}
+
+.starOne {
+  top: 75px;
+
+  left: 65px;
+
+  font-size: 24px;
+}
+
+.starTwo {
+  top: 105px;
+
+  right: 70px;
+
+  font-size: 18px;
+}
+
+.starThree {
+  bottom: 95px;
+
+  left: 90px;
+
+  font-size: 18px;
+}
+
+.starFour {
+  bottom: 70px;
+
+  right: 80px;
+
+  font-size: 23px;
+}
+
+
+/* =========================================================
+   GOLD CORNER DECORATION
+========================================================= */
+
+.goldCorner {
+  position: absolute;
+
+  z-index: 1;
+
+  width: 180px;
+
+  height: 180px;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  opacity: 0.6;
+}
+
+.goldCorner.topRight {
+  top: -105px;
+
+  right: -105px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(238, 191, 72, 0.42),
+      rgba(238, 191, 72, 0.1) 55%,
+      transparent 72%
+    );
+}
+
+.goldCorner.bottomLeft {
+  bottom: -110px;
+
+  left: -110px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(238, 191, 72, 0.42),
+      rgba(238, 191, 72, 0.1) 55%,
+      transparent 72%
+    );
+}
+
+
+/* =========================================================
+   HEADER
+   SK RAJA CHULAN | PHISHQUEST | PUO
+========================================================= */
+
+.certificateHeader {
+  position: relative;
+
+  z-index: 5;
+
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr 2fr 1fr;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 15px;
+
+  margin-bottom: 18px;
+
+  padding: 0 15px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   INSTITUTION LOGOS
+========================================================= */
+
+.certificateInstitution {
+  display: flex;
+
+  align-items: center;
+
+  height: 82px;
+}
+
+.certificateInstitution.left {
+  justify-content: flex-start;
+}
+
+.certificateInstitution.right {
+  justify-content: flex-end;
+}
+
+.certificateInstitution img {
+  display: block;
+
+  max-width: 125px;
+
+  max-height: 75px;
+
+  width: auto;
+
+  height: auto;
+
+  object-fit: contain;
+}
+
+
+/* =========================================================
+   PHISHQUEST CENTER
+========================================================= */
+
+.certificatePhishQuest {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  text-align: left;
+}
+
+.certificatePhishQuest img {
+  width: 58px;
+
+  height: 58px;
+
+  object-fit: contain;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   PHISHQUEST NAME
+========================================================= */
+
+.certificateBrandName {
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size: 23px;
+
+  font-weight: 900;
+
+  letter-spacing: 3px;
+
+  line-height: 1.1;
+
+  color: #171717;
+}
+
+
+/* =========================================================
+   PHISHQUEST SUBTITLE
+========================================================= */
+
+.certificateBrandSub {
+  margin-top: 4px;
+
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size: 10px;
+
+  letter-spacing: 0.3px;
+
+  color: #666;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   TITLE SECTION
+========================================================= */
+
+.certificateTitleSection {
+  position: relative;
+
+  z-index: 5;
+
+  width: 100%;
+
+  text-align: center;
+
+  margin-bottom: 8px;
+}
+
+
+/* =========================================================
+   SMALL TITLE
+========================================================= */
+
+.certificateSmallTitle {
+  margin: 0 0 8px;
+
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.8px;
+
+  color: #555;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   SIJIL PENYELESAIAN
+   SAME FONT + SIZE
+========================================================= */
+
+.certificateMainTitle {
+  display: flex;
+
+  align-items: baseline;
+
+  justify-content: center;
+
+  gap: 15px;
+
+  width: 100%;
+
+  margin: 0 auto;
+
+  white-space: nowrap;
+}
+
+
+/* SIJIL */
+
+.certificateMainTitle h1 {
+  margin: 0;
+
+  padding: 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 46px;
+
+  line-height: 1;
+
+  font-weight: 700;
+
+  letter-spacing: 2.5px;
+
+  color: #171717;
+}
+
+
+/* PENYELESAIAN */
+
+.certificateMainTitle span {
+  margin: 0;
+
+  padding: 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 46px;
+
+  line-height: 1;
+
+  font-weight: 700;
+
+  letter-spacing: 2.5px;
+
+  color: #a9781e;
+}
+
+
+/* =========================================================
+   TITLE DECORATION
+========================================================= */
+
+.titleDecoration {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  width: 65%;
+
+  margin: 11px auto 0;
+}
+
+.titleDecoration span {
+  flex: 1;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      to right,
+      transparent,
+      #c99730
+    );
+}
+
+.titleDecoration span:last-child {
+  background:
+    linear-gradient(
+      to left,
+      transparent,
+      #c99730
+    );
+}
+
+.titleDecoration b {
+  color: #b27c1e;
+
+  font-size: 15px;
+
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   STUDENT NAME
+========================================================= */
+
+.certificateStudent {
+  position: relative;
+
+  z-index: 5;
+
+  width: 78%;
+
+  text-align: center;
+
+  margin: 10px 0 18px;
+}
+
+.certificateStudentName {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 34px;
+
+  font-weight: 700;
+
+  color: #222;
+
+  text-transform: uppercase;
+
+  min-height: 40px;
+}
+
+.certificateUnderline {
+  width: 100%;
+
+  height: 2px;
+
+  margin-top: 7px;
+
+  background:
+    linear-gradient(
+      to right,
+      transparent,
+      #c99531 15%,
+      #444 50%,
+      #c99531 85%,
+      transparent
+    );
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.certificateDescription {
+  position: relative;
+
+  z-index: 5;
+
+  width: 100%;
+
+  max-width: 800px;
+
+  text-align: center;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+
+  color: #333;
+
+  margin-bottom: 18px;
+}
+
+.certificateDescription p {
+  margin: 4px 0;
+}
+
+.certificateDescription strong {
+  display: block;
+
+  margin: 6px 0;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  color: #202020;
+}
+
+
+/* =========================================================
+   INFORMATION CARDS
+========================================================= */
+
+.certificateDetails {
+  position: relative;
+
+  z-index: 5;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  width: 88%;
+
+  gap: 16px;
+
+  margin-top: 5px;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   DETAIL CARD
+========================================================= */
+
+.certificateDetail {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 5px;
+
+  min-height: 100px;
+
+  padding: 24px 12px 12px;
+
+  box-sizing: border-box;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.95),
+      rgba(255, 249, 232, 0.95)
+    );
+
+  border: 1px solid #e7c77e;
+
+  border-radius: 13px;
+
+  box-shadow:
+    0 4px 12px
+    rgba(164, 118, 35, 0.08);
+}
+
+
+/* =========================================================
+   DETAIL ICON
+========================================================= */
+
+.detailIcon {
+  position: absolute;
+
+  top: -24px;
+
+  width: 47px;
+
+  height: 47px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      145deg,
+      #fff7d9,
+      #f1c458
+    );
+
+  border: 1px solid #d9a62e;
+
+  font-size: 20px;
+
+  box-shadow:
+    0 3px 8px
+    rgba(190, 140, 40, 0.15);
+}
+
+
+/* =========================================================
+   DETAIL LABEL
+========================================================= */
+
+.certificateDetail span {
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.4px;
+
+  color: #777;
+}
+
+
+/* =========================================================
+   DETAIL VALUE
+========================================================= */
+
+.certificateDetail strong {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  color: #222;
+}
+
+
+/* =========================================================
+   PROJECT TEAM
+========================================================= */
+
+.certificateFooter {
+  position: relative;
+
+  z-index: 5;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  width: 100%;
+
+  margin-top: 25px;
+
+  text-align: center;
+}
+
+.certificateSignature {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  text-align: center;
+}
+
+.signatureLine {
+  width: 210px;
+
+  height: 1px;
+
+  margin-bottom: 7px;
+
+  background: #333;
+}
+
+.certificateSignature strong {
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size: 13px;
+
+  color: #333;
+}
+
+
+/* =========================================================
+   FOOTER DECORATION
+========================================================= */
+
+.footerDecoration {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  width: 250px;
+
+  margin-top: 9px;
+}
+
+.footerDecoration span {
+  flex: 1;
+
+  height: 1px;
+
+  background: #d2a13b;
+}
+
+.footerDecoration b {
+  color: #b57e1f;
+
+  font-size: 14px;
+
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   BOTTOM TEXT
+========================================================= */
+
+.certificateBottom {
+  position: relative;
+
+  z-index: 5;
+
+  margin-top: 9px;
+
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size: 9px;
+
+  letter-spacing: 0.8px;
+
+  color: #777;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.certificateLoading {
+  min-height: 80vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+}
+
+.certificateLoadingIcon {
+  font-size: 55px;
+
+  margin-bottom: 10px;
+}
+
+.certificateLoading h2 {
+  margin: 5px 0;
+
+  font-size: 25px;
+}
+
+.certificateLoading p {
+  color: #666;
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.certificateError {
+  max-width: 600px;
+
+  margin: 100px auto;
+
+  padding: 45px 35px;
+
+  background: white;
+
+  border-radius: 15px;
+
+  text-align: center;
+
+  box-shadow:
+    0 10px 30px
+    rgba(0, 0, 0, 0.1);
+}
+
+.certificateErrorIcon {
+  font-size: 55px;
+
+  margin-bottom: 15px;
+}
+
+.certificateError h2 {
+  margin-bottom: 12px;
+
+  color: #333;
+}
+
+.certificateError p {
+  line-height: 1.6;
+
+  color: #666;
+}
+
+.certificateBackBtn {
+  margin-top: 20px;
+
+  padding: 11px 20px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #f3a21b;
+
+  color: white;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.certificateBackBtn:hover {
+  opacity: 0.9;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .certificatePage {
+    padding: 20px;
+  }
+
+
+  .certificateInner {
+    padding: 32px 30px;
+  }
+
+
+  .certificateMainTitle h1,
+  .certificateMainTitle span {
+    font-size: 39px;
+  }
+
+
+  .certificateDetails {
+    width: 95%;
+  }
+
+
+  .certificateInstitution img {
+    max-width: 105px;
+
+    max-height: 65px;
+  }
+
+
+  .certificatePhishQuest img {
+    width: 50px;
+
+    height: 50px;
+  }
+
+
+  .certificateBrandName {
+    font-size: 20px;
+  }
+
+
+  .certificateBrandSub {
+    font-size: 9px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .certificatePage {
+    padding: 12px;
+  }
+
+
+  .certificateOuter {
+    padding: 9px;
+  }
+
+
+  .certificateInner {
+    min-height: auto;
+
+    padding: 30px 15px;
+  }
+
+
+  /* Header */
+
+  .certificateHeader {
+    grid-template-columns:
+      1fr 1.7fr 1fr;
+
+    gap: 5px;
+
+    padding: 0 5px;
+
+    margin-bottom: 16px;
+  }
+
+
+  .certificateInstitution {
+    height: 60px;
+  }
+
+
+  .certificateInstitution img {
+    max-width: 75px;
+
+    max-height: 50px;
+  }
+
+
+  .certificatePhishQuest {
+    gap: 5px;
+  }
+
+
+  .certificatePhishQuest img {
+    width: 40px;
+
+    height: 40px;
+  }
+
+
+  .certificateBrandName {
+    font-size: 14px;
+
+    letter-spacing: 1.5px;
+  }
+
+
+  .certificateBrandSub {
+    font-size: 6.5px;
+
+    letter-spacing: 0;
+
+    white-space: normal;
+  }
+
+
+  /* Small title */
+
+  .certificateSmallTitle {
+    font-size: 8px;
+
+    letter-spacing: 1px;
+  }
+
+
+  /* Main title */
+
+  .certificateMainTitle {
+    gap: 8px;
+  }
+
+
+  .certificateMainTitle h1,
+  .certificateMainTitle span {
+    font-size: 30px;
+
+    letter-spacing: 1px;
+  }
+
+
+  /* Student */
+
+  .certificateStudent {
+    width: 90%;
+  }
+
+
+  .certificateStudentName {
+    font-size: 25px;
+  }
+
+
+  /* Description */
+
+  .certificateDescription {
+    font-size: 12px;
+
+    line-height: 1.5;
+  }
+
+
+  .certificateDescription strong {
+    font-size: 13px;
+  }
+
+
+  /* Details */
+
+  .certificateDetails {
+    grid-template-columns: 1fr;
+
+    width: 88%;
+
+    gap: 20px;
+  }
+
+
+  .certificateDetail {
+    min-height: 95px;
+  }
+
+
+  /* Hide decorative stars on mobile */
+
+  .decorStar {
+    display: none;
+  }
+
+
+  /* Footer */
+
+  .certificateFooter {
+    margin-top: 28px;
+  }
+
+
+  .certificateActions {
+    flex-wrap: wrap;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .certificatePage {
+    padding: 7px;
+  }
+
+
+  .certificateOuter {
+    padding: 6px;
+  }
+
+
+  .certificateInner {
+    padding: 27px 10px;
+  }
+
+
+  /* Header */
+
+  .certificateHeader {
+    grid-template-columns:
+      0.9fr 1.8fr 0.9fr;
+
+    gap: 2px;
+  }
+
+
+  .certificateInstitution img {
+    max-width: 60px;
+
+    max-height: 42px;
+  }
+
+
+  .certificatePhishQuest img {
+    width: 35px;
+
+    height: 35px;
+  }
+
+
+  .certificateBrandName {
+    font-size: 12px;
+
+    letter-spacing: 1px;
+  }
+
+
+  .certificateBrandSub {
+    font-size: 5.5px;
+  }
+
+
+  /* Title */
+
+  .certificateSmallTitle {
+    font-size: 7px;
+
+    letter-spacing: 0.7px;
+  }
+
+
+  .certificateMainTitle {
+    gap: 6px;
+  }
+
+
+  .certificateMainTitle h1,
+  .certificateMainTitle span {
+    font-size: 24px;
+
+    letter-spacing: 0.5px;
+  }
+
+
+  /* Student */
+
+  .certificateStudentName {
+    font-size: 21px;
+  }
+
+
+  /* Description */
+
+  .certificateDescription {
+    font-size: 11px;
+  }
+
+
+  .certificateDescription strong {
+    font-size: 12px;
+  }
+
+
+  /* Details */
+
+  .certificateDetail strong {
+    font-size: 14px;
+  }
+}
+
+
+/* =========================================================
+   PRINT / SAVE PDF
+========================================================= */
+
+@media print {
+
+  @page {
+    size: A4 landscape;
+
+    margin: 0;
+  }
+
+
+  html,
+  body {
+    width: 100%;
+
+    height: 100%;
+
+    margin: 0;
+
+    padding: 0;
+
+    background: white !important;
+  }
+
+
+  .certificatePage {
+    min-height: 100vh;
+
+    padding: 0;
+
+    background: white !important;
+  }
+
+
+  .certificateActions {
+    display: none !important;
+  }
+
+
+  .certificateOuter {
+    width: 100%;
+
+    max-width: none;
+
+    min-height: 100vh;
+
+    margin: 0;
+
+    padding: 10px;
+
+    box-shadow: none;
+
+    background:
+      linear-gradient(
+        135deg,
+        #c99632,
+        #f1cf76,
+        #c18d29
+      );
+
+    page-break-inside: avoid;
+  }
+
+
+  .certificateInner {
+    min-height:
+      calc(100vh - 20px);
+
+    padding: 30px 45px;
+
+    box-shadow: none;
+
+    page-break-inside: avoid;
+  }
+
+
+  /* Header */
+
+  .certificateHeader {
+    grid-template-columns:
+      1fr 2fr 1fr;
+
+    gap: 15px;
+
+    margin-bottom: 14px;
+  }
+
+
+  .certificateInstitution {
+    height: 70px;
+  }
+
+
+  .certificateInstitution img {
+    max-width: 120px;
+
+    max-height: 65px;
+  }
+
+
+  .certificatePhishQuest img {
+    width: 50px;
+
+    height: 50px;
+  }
+
+
+  .certificateBrandName {
+    font-size: 21px;
+  }
+
+
+  .certificateBrandSub {
+    font-size: 9px;
+  }
+
+
+  /* Title */
+
+  .certificateMainTitle h1,
+  .certificateMainTitle span {
+    font-size: 44px;
+
+    letter-spacing: 2px;
+  }
+
+
+  /* Student */
+
+  .certificateStudentName {
+    font-size: 32px;
+  }
+
+
+  /* Description */
+
+  .certificateDescription {
+    font-size: 13px;
+
+    margin-bottom: 15px;
+  }
+
+
+  .certificateDescription strong {
+    font-size: 14px;
+  }
+
+
+  /* Details */
+
+  .certificateDetails {
+    width: 88%;
+
+    gap: 14px;
+  }
+
+
+  .certificateDetail {
+    min-height: 90px;
+
+    padding-top: 22px;
+  }
+
+
+  .certificateFooter {
+    margin-top: 20px;
+  }
+
+
+  .certificateBottom {
+    margin-top: 7px;
+  }
+
+
+  /* Remove excessive decorations when printing *//* =========================================================
+   PHISHQUEST CERTIFICATE
+   Cute + Formal + Institutional
+========================================================= */
+
+.certificatePage {
+  min-height: 100vh;
+
+  padding: 30px;
+
+  box-sizing: border-box;
+
+  background:
+    radial-gradient(
+      circle at top,
+      #fffdf8 0%,
+      #f7f0e3 50%,
+      #eee4d0 100%
+    );
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.certificateActions {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 25px;
+}
+
+.certificateAction {
+  border: none;
+
+  border-radius: 10px;
+
+  padding: 11px 20px;
+
+  background: #f3a21b;
+
+  color: white;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.certificateAction:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.certificateAction.secondary {
+  background: white;
+
+  color: #333;
+
+  border: 1px solid #d5d5d5;
+}
+
+
+/* =========================================================
+   OUTER GOLD FRAME
+========================================================= */
+
+.certificateOuter {
+  position: relative;
+
+  width: 100%;
+
+  max-width: 1100px;
+
+  min-height: 700px;
+
+  margin: 0 auto;
+
+  padding: 16px;
+
+  box-sizing: border-box;
+
+  background:
+    linear-gradient(
+      135deg,
+      #c99632,
+      #f1cf76,
+      #c18d29
+    );
+
+  box-shadow:
+    0 18px 45px
+    rgba(70, 50, 15, 0.18);
+}
+
+
+/* =========================================================
+   INNER CERTIFICATE
+========================================================= */
+
+.certificateInner {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 668px;
+
+  box-sizing: border-box;
+
+  padding: 35px 50px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at center,
+      #fffefa 0%,
+      #fffaf1 72%,
+      #fff6e5 100%
+    );
+
+  border: 3px solid #222;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+
+/* =========================================================
+   INNER GOLD BORDER
+========================================================= */
+
+.certificateInner::before {
+  content: "";
+
+  position: absolute;
+
+  top: 13px;
+  left: 13px;
+  right: 13px;
+  bottom: 13px;
+
+  border: 1px solid #d3a03b;
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+
+/* =========================================================
+   SECOND INNER BORDER
+========================================================= */
+
+.certificateInner::after {
+  content: "";
+
+  position: absolute;
+
+  top: 19px;
+  left: 19px;
+  right: 19px;
+  bottom: 19px;
+
+  border: 1px solid
+    rgba(210, 160, 60, 0.25);
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+
+/* =========================================================
+   DECORATIVE STARS
+========================================================= */
+
+.decorStar {
+  position: absolute;
+
+  z-index: 2;
+
+  color: #d2a03b;
+
+  pointer-events: none;
+
+  font-family:
+    Georgia,
+    serif;
+}
+
+.starOne {
+  top: 75px;
+
+  left: 65px;
+
+  font-size: 24px;
+}
+
+.starTwo {
+  top: 105px;
+
+  right: 70px;
+
+  font-size: 18px;
+}
+
+.starThree {
+  bottom: 95px;
+
+  left: 90px;
+
+  font-size: 18px;
+}
+
+.starFour {
+  bottom: 70px;
+
+  right: 80px;
+
+  font-size: 23px;
+}
+
+
+/* =========================================================
+   GOLD CORNER DECORATION
+========================================================= */
+
+.goldCorner {
+  position: absolute;
+
+  z-index: 1;
+
+  width: 180px;
+
+  height: 180px;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  opacity: 0.6;
+}
+
+.goldCorner.topRight {
+  top: -105px;
+
+  right: -105px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(238, 191, 72, 0.42),
+      rgba(238, 191, 72, 0.1) 55%,
+      transparent 72%
+    );
+}
+
+.goldCorner.bottomLeft {
+  bottom: -110px;
+
+  left: -110px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(238, 191, 72, 0.42),
+      rgba(238, 191, 72, 0.1) 55%,
+      transparent 72%
+    );
+}
+
+
+/* =========================================================
+   HEADER
+   SK RAJA CHULAN | PHISHQUEST | PUO
+========================================================= */
+
+.certificateHeader {
+  position: relative;
+
+  z-index: 5;
+
+  width: 82%;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr 1.5fr 1fr;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  margin: 0 auto 18px;
+
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   INSTITUTION LOGOS
+========================================================= */
+
+.certificateInstitution {
+  display: flex;
+
+  align-items: center;
+
+  height: 82px;
+
+  width: 100%;
+}
+
+.certificateInstitution.left {
+  justify-content: flex-end;
+}
+
+.certificateInstitution.right {
+  justify-content: flex-start;
+}
+
+.certificateInstitution img {
+  display: block;
+
+  max-width: 125px;
+
+  max-height: 75px;
+
+  width: auto;
+
+  height: auto;
+
+  object-fit: contain;
+}
+
+
+/* =========================================================
+   PHISHQUEST CENTER
+========================================================= */
+
+.certificatePhishQuest {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  text-align: left;
+}
+
+.certificatePhishQuest img {
+  width: 58px;
+
+  height: 58px;
+
+  object-fit: contain;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   PHISHQUEST NAME
+========================================================= */
+
+.certificateBrandName {
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size: 23px;
+
+  font-weight: 900;
+
+  letter-spacing: 3px;
+
+  line-height: 1.1;
+
+  color: #171717;
+}
+
+
+/* =========================================================
+   PHISHQUEST SUBTITLE
+========================================================= */
+
+.certificateBrandSub {
+  margin-top: 4px;
+
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size: 10px;
+
+  letter-spacing: 0.3px;
+
+  color: #666;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   TITLE SECTION
+========================================================= */
+
+.certificateTitleSection {
+  position: relative;
+
+  z-index: 5;
+
+  width: 100%;
+
+  text-align: center;
+
+  margin-bottom: 8px;
+}
+
+
+/* =========================================================
+   SMALL TITLE
+========================================================= */
+
+.certificateSmallTitle {
+  margin: 0 0 8px;
+
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.8px;
+
+  color: #555;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   SIJIL PENYELESAIAN
+   SAME FONT + SIZE
+========================================================= */
+
+.certificateMainTitle {
+  display: flex;
+
+  align-items: baseline;
+
+  justify-content: center;
+
+  gap: 15px;
+
+  width: 100%;
+
+  margin: 0 auto;
+
+  white-space: nowrap;
+}
+
+
+/* SIJIL */
+
+.certificateMainTitle h1 {
+  margin: 0;
+
+  padding: 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 46px;
+
+  line-height: 1;
+
+  font-weight: 700;
+
+  letter-spacing: 2.5px;
+
+  color: #171717;
+}
+
+
+/* PENYELESAIAN */
+
+.certificateMainTitle span {
+  margin: 0;
+
+  padding: 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 46px;
+
+  line-height: 1;
+
+  font-weight: 700;
+
+  letter-spacing: 2.5px;
+
+  color: #a9781e;
+}
+
+
+/* =========================================================
+   TITLE DECORATION
+========================================================= */
+
+.titleDecoration {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  width: 65%;
+
+  margin: 11px auto 0;
+}
+
+.titleDecoration span {
+  flex: 1;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      to right,
+      transparent,
+      #c99730
+    );
+}
+
+.titleDecoration span:last-child {
+  background:
+    linear-gradient(
+      to left,
+      transparent,
+      #c99730
+    );
+}
+
+.titleDecoration b {
+  color: #b27c1e;
+
+  font-size: 15px;
+
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   STUDENT NAME
+========================================================= */
+
+.certificateStudent {
+  position: relative;
+
+  z-index: 5;
+
+  width: 78%;
+
+  text-align: center;
+
+  margin: 10px 0 18px;
+}
+
+.certificateStudentName {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 34px;
+
+  font-weight: 700;
+
+  color: #222;
+
+  text-transform: uppercase;
+
+  min-height: 40px;
+}
+
+.certificateUnderline {
+  width: 100%;
+
+  height: 2px;
+
+  margin-top: 7px;
+
+  background:
+    linear-gradient(
+      to right,
+      transparent,
+      #c99531 15%,
+      #444 50%,
+      #c99531 85%,
+      transparent
+    );
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.certificateDescription {
+  position: relative;
+
+  z-index: 5;
+
+  width: 100%;
+
+  max-width: 800px;
+
+  text-align: center;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+
+  color: #333;
+
+  margin-bottom: 18px;
+}
+
+.certificateDescription p {
+  margin: 4px 0;
+}
+
+.certificateDescription strong {
+  display: block;
+
+  margin: 6px 0;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  color: #202020;
+}
+
+
+/* =========================================================
+   INFORMATION CARDS
+========================================================= */
+
+.certificateDetails {
+  position: relative;
+
+  z-index: 5;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  width: 88%;
+
+  gap: 16px;
+
+  margin-top: 5px;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   DETAIL CARD
+========================================================= */
+
+.certificateDetail {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 5px;
+
+  min-height: 100px;
+
+  padding: 24px 12px 12px;
+
+  box-sizing: border-box;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.95),
+      rgba(255, 249, 232, 0.95)
+    );
+
+  border: 1px solid #e7c77e;
+
+  border-radius: 13px;
+
+  box-shadow:
+    0 4px 12px
+    rgba(164, 118, 35, 0.08);
+}
+
+
+/* =========================================================
+   DETAIL ICON
+========================================================= */
+
+.detailIcon {
+  position: absolute;
+
+  top: -24px;
+
+  width: 47px;
+
+  height: 47px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      145deg,
+      #fff7d9,
+      #f1c458
+    );
+
+  border: 1px solid #d9a62e;
+
+  font-size: 20px;
+
+  box-shadow:
+    0 3px 8px
+    rgba(190, 140, 40, 0.15);
+}
+
+
+/* =========================================================
+   DETAIL LABEL
+========================================================= */
+
+.certificateDetail span {
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.4px;
+
+  color: #777;
+}
+
+
+/* =========================================================
+   DETAIL VALUE
+========================================================= */
+
+.certificateDetail strong {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  color: #222;
+}
+
+
+/* =========================================================
+   PROJECT TEAM
+========================================================= */
+
+.certificateFooter {
+  position: relative;
+
+  z-index: 5;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  width: 100%;
+
+  margin-top: 25px;
+
+  text-align: center;
+}
+
+.certificateSignature {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  text-align: center;
+}
+
+.signatureLine {
+  width: 210px;
+
+  height: 1px;
+
+  margin-bottom: 7px;
+
+  background: #333;
+}
+
+.certificateSignature strong {
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size: 13px;
+
+  color: #333;
+}
+
+
+/* =========================================================
+   FOOTER DECORATION
+========================================================= */
+
+.footerDecoration {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  width: 250px;
+
+  margin-top: 9px;
+}
+
+.footerDecoration span {
+  flex: 1;
+
+  height: 1px;
+
+  background: #d2a13b;
+}
+
+.footerDecoration b {
+  color: #b57e1f;
+
+  font-size: 14px;
+
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   BOTTOM TEXT
+========================================================= */
+
+.certificateBottom {
+  position: relative;
+
+  z-index: 5;
+
+  margin-top: 9px;
+
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size: 9px;
+
+  letter-spacing: 0.8px;
+
+  color: #777;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.certificateLoading {
+  min-height: 80vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+}
+
+.certificateLoadingIcon {
+  font-size: 55px;
+
+  margin-bottom: 10px;
+}
+
+.certificateLoading h2 {
+  margin: 5px 0;
+
+  font-size: 25px;
+}
+
+.certificateLoading p {
+  color: #666;
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.certificateError {
+  max-width: 600px;
+
+  margin: 100px auto;
+
+  padding: 45px 35px;
+
+  background: white;
+
+  border-radius: 15px;
+
+  text-align: center;
+
+  box-shadow:
+    0 10px 30px
+    rgba(0, 0, 0, 0.1);
+}
+
+.certificateErrorIcon {
+  font-size: 55px;
+
+  margin-bottom: 15px;
+}
+
+.certificateError h2 {
+  margin-bottom: 12px;
+
+  color: #333;
+}
+
+.certificateError p {
+  line-height: 1.6;
+
+  color: #666;
+}
+
+.certificateBackBtn {
+  margin-top: 20px;
+
+  padding: 11px 20px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #f3a21b;
+
+  color: white;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.certificateBackBtn:hover {
+  opacity: 0.9;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .certificatePage {
+    padding: 20px;
+  }
+
+
+  .certificateInner {
+    padding: 32px 30px;
+  }
+
+
+  .certificateMainTitle h1,
+  .certificateMainTitle span {
+    font-size: 39px;
+  }
+
+
+  .certificateDetails {
+    width: 95%;
+  }
+
+
+  .certificateInstitution img {
+    max-width: 105px;
+
+    max-height: 65px;
+  }
+
+
+  .certificatePhishQuest img {
+    width: 50px;
+
+    height: 50px;
+  }
+
+
+  .certificateBrandName {
+    font-size: 20px;
+  }
+
+
+  .certificateBrandSub {
+    font-size: 9px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .certificatePage {
+    padding: 12px;
+  }
+
+
+  .certificateOuter {
+    padding: 9px;
+  }
+
+
+  .certificateInner {
+    min-height: auto;
+
+    padding: 30px 15px;
+  }
+
+
+  /* Header */
+
+  .certificateHeader {
+    grid-template-columns:
+      1fr 1.7fr 1fr;
+
+    gap: 5px;
+
+    padding: 0 5px;
+
+    margin-bottom: 16px;
+  }
+
+
+  .certificateInstitution {
+    height: 60px;
+  }
+
+
+  .certificateInstitution img {
+    max-width: 75px;
+
+    max-height: 50px;
+  }
+
+
+  .certificatePhishQuest {
+    gap: 5px;
+  }
+
+
+  .certificatePhishQuest img {
+    width: 40px;
+
+    height: 40px;
+  }
+
+
+  .certificateBrandName {
+    font-size: 14px;
+
+    letter-spacing: 1.5px;
+  }
+
+
+  .certificateBrandSub {
+    font-size: 6.5px;
+
+    letter-spacing: 0;
+
+    white-space: normal;
+  }
+
+
+  /* Small title */
+
+  .certificateSmallTitle {
+    font-size: 8px;
+
+    letter-spacing: 1px;
+  }
+
+
+  /* Main title */
+
+  .certificateMainTitle {
+    gap: 8px;
+  }
+
+
+  .certificateMainTitle h1,
+  .certificateMainTitle span {
+    font-size: 30px;
+
+    letter-spacing: 1px;
+  }
+
+
+  /* Student */
+
+  .certificateStudent {
+    width: 90%;
+  }
+
+
+  .certificateStudentName {
+    font-size: 25px;
+  }
+
+
+  /* Description */
+
+  .certificateDescription {
+    font-size: 12px;
+
+    line-height: 1.5;
+  }
+
+
+  .certificateDescription strong {
+    font-size: 13px;
+  }
+
+
+  /* Details */
+
+  .certificateDetails {
+    grid-template-columns: 1fr;
+
+    width: 88%;
+
+    gap: 20px;
+  }
+
+
+  .certificateDetail {
+    min-height: 95px;
+  }
+
+
+  /* Hide decorative stars on mobile */
+
+  .decorStar {
+    display: none;
+  }
+
+
+  /* Footer */
+
+  .certificateFooter {
+    margin-top: 28px;
+  }
+
+
+  .certificateActions {
+    flex-wrap: wrap;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .certificatePage {
+    padding: 7px;
+  }
+
+
+  .certificateOuter {
+    padding: 6px;
+  }
+
+
+  .certificateInner {
+    padding: 27px 10px;
+  }
+
+
+  /* Header */
+
+  .certificateHeader {
+    grid-template-columns:
+      0.9fr 1.8fr 0.9fr;
+
+    gap: 2px;
+  }
+
+
+  .certificateInstitution img {
+    max-width: 60px;
+
+    max-height: 42px;
+  }
+
+
+  .certificatePhishQuest img {
+    width: 35px;
+
+    height: 35px;
+  }
+
+
+  .certificateBrandName {
+    font-size: 12px;
+
+    letter-spacing: 1px;
+  }
+
+
+  .certificateBrandSub {
+    font-size: 5.5px;
+  }
+
+
+  /* Title */
+
+  .certificateSmallTitle {
+    font-size: 7px;
+
+    letter-spacing: 0.7px;
+  }
+
+
+  .certificateMainTitle {
+    gap: 6px;
+  }
+
+
+  .certificateMainTitle h1,
+  .certificateMainTitle span {
+    font-size: 24px;
+
+    letter-spacing: 0.5px;
+  }
+
+
+  /* Student */
+
+  .certificateStudentName {
+    font-size: 21px;
+  }
+
+
+  /* Description */
+
+  .certificateDescription {
+    font-size: 11px;
+  }
+
+
+  .certificateDescription strong {
+    font-size: 12px;
+  }
+
+
+  /* Details */
+
+  .certificateDetail strong {
+    font-size: 14px;
+  }
+}
+
+
+/* =========================================================
+   PRINT / SAVE PDF
+========================================================= */
+
+@media print {
+
+  @page {
+    size: A4 landscape;
+
+    margin: 0;
+  }
+
+
+  html,
+  body {
+    width: 100%;
+
+    height: 100%;
+
+    margin: 0;
+
+    padding: 0;
+
+    background: white !important;
+  }
+
+
+  .certificatePage {
+    min-height: 100vh;
+
+    padding: 0;
+
+    background: white !important;
+  }
+
+
+  .certificateActions {
+    display: none !important;
+  }
+
+
+  .certificateOuter {
+    width: 100%;
+
+    max-width: none;
+
+    min-height: 100vh;
+
+    margin: 0;
+
+    padding: 10px;
+
+    box-shadow: none;
+
+    background:
+      linear-gradient(
+        135deg,
+        #c99632,
+        #f1cf76,
+        #c18d29
+      );
+
+    page-break-inside: avoid;
+  }
+
+
+  .certificateInner {
+    min-height:
+      calc(100vh - 20px);
+
+    padding: 30px 45px;
+
+    box-shadow: none;
+
+    page-break-inside: avoid;
+  }
+
+
+  /* Header */
+
+  .certificateHeader {
+    grid-template-columns:
+      1fr 2fr 1fr;
+
+    gap: 15px;
+
+    margin-bottom: 14px;
+  }
+
+
+  .certificateInstitution {
+    height: 70px;
+  }
+
+
+  .certificateInstitution img {
+    max-width: 120px;
+
+    max-height: 65px;
+  }
+
+
+  .certificatePhishQuest img {
+    width: 50px;
+
+    height: 50px;
+  }
+
+
+  .certificateBrandName {
+    font-size: 21px;
+  }
+
+
+  .certificateBrandSub {
+    font-size: 9px;
+  }
+
+
+  /* Title */
+
+  .certificateMainTitle h1,
+  .certificateMainTitle span {
+    font-size: 44px;
+
+    letter-spacing: 2px;
+  }
+
+
+  /* Student */
+
+  .certificateStudentName {
+    font-size: 32px;
+  }
+
+
+  /* Description */
+
+  .certificateDescription {
+    font-size: 13px;
+
+    margin-bottom: 15px;
+  }
+
+
+  .certificateDescription strong {
+    font-size: 14px;
+  }
+
+
+  /* Details */
+
+  .certificateDetails {
+    width: 88%;
+
+    gap: 14px;
+  }
+
+
+  .certificateDetail {
+    min-height: 90px;
+
+    padding-top: 22px;
+  }
+
+
+  .certificateFooter {
+    margin-top: 20px;
+  }
+
+
+  .certificateBottom {
+    margin-top: 7px;
+  }
+
+
+  /* Remove excessive decorations when printing */
+
+  .decorStar {
+    opacity: 0.6;
+  }
+}
+
+  .decorStar {
+    opacity: 0.6;
+  }
+}
+/* =========================================================
+   FINAL HEADER POSITION
+   SK RAJA CHULAN | PHISHQUEST | PUO
+========================================================= */
+
+.certificateHeader {
+  position: relative !important;
+
+  width: 100% !important;
+
+  min-height: 82px;
+
+  display: flex !important;
+
+  align-items: center !important;
+
+  justify-content: center !important;
+
+  margin: 0 auto 18px !important;
+
+  padding: 0 !important;
+
+  box-sizing: border-box;
+
+  z-index: 10;
+}
+
+
+/* =========================================================
+   CENTER PHISHQUEST
+========================================================= */
+
+.certificatePhishQuest {
+  position: relative !important;
+
+  display: flex !important;
+
+  align-items: center !important;
+
+  justify-content: center !important;
+
+  gap: 10px;
+
+  z-index: 5;
+}
+
+
+/* =========================================================
+   LEFT — SK RAJA CHULAN
+========================================================= */
+
+.certificateInstitution.left {
+  position: absolute !important;
+
+  top: 50% !important;
+
+  right: calc(50% + 215px) !important;
+
+  transform: translateY(-50%) !important;
+
+  width: auto !important;
+
+  height: 82px !important;
+
+  display: flex !important;
+
+  align-items: center !important;
+
+  justify-content: center !important;
+
+  margin: 0 !important;
+
+  padding: 0 !important;
+
+  z-index: 5;
+}
+
+
+/* =========================================================
+   RIGHT — POLITEKNIK UNGKU OMAR
+========================================================= */
+
+.certificateInstitution.right {
+  position: absolute !important;
+
+  top: 50% !important;
+
+  left: calc(50% + 215px) !important;
+
+  transform: translateY(-50%) !important;
+
+  width: auto !important;
+
+  height: 82px !important;
+
+  display: flex !important;
+
+  align-items: center !important;
+
+  justify-content: center !important;
+
+  margin: 0 !important;
+
+  padding: 0 !important;
+
+  z-index: 5;
+}
+
+
+/* =========================================================
+   LOGO SIZE
+========================================================= */
+
+.certificateInstitution img {
+  display: block !important;
+
+  width: auto !important;
+
+  height: auto !important;
+
+  max-width: 125px !important;
+
+  max-height: 75px !important;
+
+  object-fit: contain !important;
+}
+
+
+/* =========================================================
+   PHISHQUEST MASCOT
+========================================================= */
+
+.certificatePhishQuest img {
+  width: 58px !important;
+
+  height: 58px !important;
+
+  object-fit: contain !important;
+
+  flex-shrink: 0 !important;
+}
+
+
+/* =========================================================
+   PHISHQUEST TEXT
+========================================================= */
+
+.certificateBrandName {
+  white-space: nowrap !important;
+}
+
+.certificateBrandSub {
+  white-space: nowrap !important;
+}
+
+
+/* =========================================================
+   PRINT / PDF
+========================================================= */
+
+@media print {
+
+  .certificateHeader {
+    position: relative !important;
+
+    width: 100% !important;
+
+    min-height: 70px;
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    margin: 0 auto 14px !important;
+
+    padding: 0 !important;
+  }
+
+
+  .certificateInstitution.left {
+    position: absolute !important;
+
+    top: 50% !important;
+
+    right: calc(50% + 205px) !important;
+
+    transform: translateY(-50%) !important;
+
+    width: auto !important;
+
+    height: 70px !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+  }
+
+
+  .certificateInstitution.right {
+    position: absolute !important;
+
+    top: 50% !important;
+
+    left: calc(50% + 205px) !important;
+
+    transform: translateY(-50%) !important;
+
+    width: auto !important;
+
+    height: 70px !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+  }
+
+
+  .certificateInstitution img {
+    max-width: 120px !important;
+
+    max-height: 65px !important;
+  }
+
+
+  .certificatePhishQuest img {
+    width: 50px !important;
+
+    height: 50px !important;
+  }
+}

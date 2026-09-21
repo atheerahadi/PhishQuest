@@ -22,14 +22,26 @@ function Dashboard() {
   const navigate = useNavigate();
 
 
+  // =========================
+  // STATE
+  // =========================
+
   const [profile, setProfile] = useState(null);
 
   const [quizResults, setQuizResults] = useState([]);
 
   const [simulationResults, setSimulationResults] = useState([]);
 
+  const [moduleProgress, setModuleProgress] = useState([]);
+
+  const [certificate, setCertificate] = useState(null);
+
   const [loading, setLoading] = useState(true);
 
+
+  // =========================
+  // LOAD DASHBOARD
+  // =========================
 
   useEffect(() => {
 
@@ -156,6 +168,69 @@ function Dashboard() {
       }
 
 
+      // =========================
+      // GET MODULE PROGRESS
+      // =========================
+
+      const {
+        data: moduleData,
+        error: moduleError
+      } = await supabase
+        .from("module_progress")
+        .select("*")
+        .eq("profile_id", user.id);
+
+
+      if (moduleError) {
+
+        console.error(
+          "Gagal mendapatkan module progress:",
+          moduleError
+        );
+
+      } else {
+
+        setModuleProgress(
+          moduleData || []
+        );
+
+      }
+
+
+      // =========================
+      // GET CERTIFICATE
+      // =========================
+
+      const {
+        data: certificateData,
+        error: certificateError
+      } = await supabase
+        .from("certificates")
+        .select("*")
+        .eq("student_id", user.id)
+        .order("created_at", {
+          ascending: false
+        })
+        .limit(1)
+        .maybeSingle();
+
+
+      if (certificateError) {
+
+        console.error(
+          "Gagal mendapatkan certificate:",
+          certificateError
+        );
+
+      } else {
+
+        setCertificate(
+          certificateData || null
+        );
+
+      }
+
+
     } catch (error) {
 
       console.error(
@@ -228,6 +303,76 @@ function Dashboard() {
 
 
   // =========================
+  // MODULE COMPLETION
+  // =========================
+
+  /*
+    Only count completed modules
+    belonging to the current student.
+
+    Set() is used so that duplicate
+    records for the same module
+    are not counted twice.
+  */
+
+  const completedModuleIds = [
+    ...new Set(
+      moduleProgress
+        .filter(
+          (module) =>
+            module.completed === true
+        )
+        .map(
+          (module) =>
+            module.module_id
+        )
+    )
+  ];
+
+
+  const completedModules =
+    completedModuleIds.length;
+
+
+  const totalModules = 6;
+
+
+  const moduleCompletionPercentage =
+    Math.min(
+      Math.round(
+        (completedModules /
+          totalModules) *
+          100
+      ),
+      100
+    );
+
+
+  const certificateUnlocked =
+    completedModules === totalModules;
+
+
+  // =========================
+  // DEBUG
+  // =========================
+
+  console.log(
+    "Module Progress:",
+    moduleProgress
+  );
+
+  console.log(
+    "Completed Modules:",
+    completedModules
+  );
+
+  console.log(
+    "Certificate Unlocked:",
+    certificateUnlocked
+  );
+
+
+  // =========================
   // LEVEL
   // =========================
 
@@ -289,6 +434,10 @@ function Dashboard() {
   }
 
 
+  // =========================
+  // DASHBOARD
+  // =========================
+
   return (
 
     <>
@@ -347,6 +496,7 @@ function Dashboard() {
 
             </button>
 
+
           </div>
 
 
@@ -359,6 +509,7 @@ function Dashboard() {
             className="heroMascot"
 
           />
+
 
         </div>
 
@@ -469,7 +620,7 @@ function Dashboard() {
 
 
         {/* =========================
-            PROGRESS
+            LEARNING PROGRESS
         ========================= */}
 
         <div className="progressCard">
@@ -510,6 +661,157 @@ function Dashboard() {
             }
 
           </p>
+
+
+        </div>
+
+
+        {/* =========================
+            CERTIFICATE
+        ========================= */}
+
+        <div className="certificateCard">
+
+
+          <h2>
+            🎓 Sijil PhishQuest
+          </h2>
+
+
+          {certificateUnlocked ? (
+
+            <>
+
+              <p>
+
+                🎉 Tahniah!
+
+                <br />
+
+                Anda telah berjaya melengkapkan
+                semua 6 modul pembelajaran
+                PhishQuest.
+
+              </p>
+
+
+              <div className="certificateProgress">
+
+                <strong>
+                  {completedModules} / {totalModules} Modul Selesai
+                </strong>
+
+              </div>
+
+
+              <p>
+
+                Kemajuan:
+                {" "}
+                {moduleCompletionPercentage}%
+
+              </p>
+
+
+              {certificate ? (
+
+                <button
+
+                  className="certificateBtn"
+
+                  onClick={() =>
+                    navigate("/certificate")
+                  }
+
+                >
+
+                  🎓 Lihat Sijil
+
+                </button>
+
+              ) : (
+
+                <button
+
+                  className="certificateBtn"
+
+                  onClick={() =>
+                    navigate("/certificate")
+                  }
+
+                >
+
+                  🎓 Jana Sijil
+
+                </button>
+
+              )}
+
+
+            </>
+
+          ) : (
+
+            <>
+
+              <p>
+
+                Lengkapkan semua 6 modul
+                pembelajaran untuk membuka
+                Sijil PhishQuest anda.
+
+              </p>
+
+
+              <div className="certificateProgress">
+
+                <strong>
+                  {completedModules} / {totalModules} Modul Selesai
+                </strong>
+
+              </div>
+
+
+              <p>
+
+                Kemajuan:
+                {" "}
+                {moduleCompletionPercentage}%
+
+              </p>
+
+
+              <div className="certificateMiniBar">
+
+                <div
+
+                  className="certificateMiniFill"
+
+                  style={{
+                    width:
+                      `${moduleCompletionPercentage}%`
+                  }}
+
+                ></div>
+
+              </div>
+
+
+              <button
+
+                className="certificateBtn"
+
+                disabled
+
+              >
+
+                🔒 Sijil Dikunci
+
+              </button>
+
+            </>
+
+          )}
 
 
         </div>
