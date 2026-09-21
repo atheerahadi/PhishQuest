@@ -193,17 +193,83 @@ function Certificate() {
         );
       }
 
-      // =====================================================
-      // IF CERTIFICATE EXISTS
-      // =====================================================
+     // =========================================================
+// IF CERTIFICATE EXISTS
+// UPDATE STUDENT NAME + CLASS
+// =========================================================
 
-      if (existingCertificate) {
-        setCertificate(
-          existingCertificate
-        );
+if (existingCertificate) {
 
-        return;
-      }
+  const latestStudentName =
+    profileData?.name ||
+    "Pelajar PhishQuest";
+
+  const latestClassName =
+    className ||
+    "Tidak dinyatakan";
+
+  const needsUpdate =
+    existingCertificate.student_name !==
+      latestStudentName ||
+    existingCertificate.class_name !==
+      latestClassName;
+
+  // -----------------------------------------------------
+  // UPDATE OLD CERTIFICATE DATA
+  // -----------------------------------------------------
+
+  if (needsUpdate) {
+
+    const {
+      data: updatedCertificate,
+      error: updateError,
+    } = await supabase
+      .from("certificates")
+      .update({
+        student_name:
+          latestStudentName,
+
+        class_name:
+          latestClassName,
+      })
+      .eq(
+        "id",
+        existingCertificate.id
+      )
+      .eq(
+        "student_id",
+        user.id
+      )
+      .select()
+      .single();
+
+    if (updateError) {
+
+      console.error(
+        "Certificate update error:",
+        updateError
+      );
+
+      setCertificate(
+        existingCertificate
+      );
+
+      return;
+    }
+
+    setCertificate(
+      updatedCertificate
+    );
+
+  } else {
+
+    setCertificate(
+      existingCertificate
+    );
+  }
+
+  return;
+}
 
       // =====================================================
       // GENERATE NEW CERTIFICATE
