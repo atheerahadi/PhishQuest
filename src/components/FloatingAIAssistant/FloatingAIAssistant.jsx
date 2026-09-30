@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import {
   Container,
@@ -6,7 +6,7 @@ import {
   MessageList,
   Composer,
   StylesheetProvider,
-  useWebchat
+  useWebchat,
 } from "@botpress/webchat";
 
 import { useAIAssistant } from "../../context/AIAssistantContext";
@@ -15,7 +15,6 @@ import phishbot from "./phishbot.png";
 
 
 function FloatingAIAssistant() {
-
   const { showHelp, helpLevel, closeHelp } = useAIAssistant();
 
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -38,10 +37,82 @@ function FloatingAIAssistant() {
     isTyping,
     user,
     clientState,
-    newConversation
+    newConversation,
+    on,
   } = useWebchat({
-    clientId
+    clientId,
   });
+
+
+  // ==========================================
+  // CONNECTION STATUS
+  // ==========================================
+
+  const isConnected = clientState === "connected";
+
+  const isConnecting =
+    clientState === "connecting";
+
+  const hasConnectionError =
+    clientState === "error";
+
+
+  // ==========================================
+  // DEBUG BOTPRESS EVENTS
+  // ==========================================
+
+  useEffect(() => {
+    console.log(
+      "PhishBot connection state:",
+      clientState
+    );
+  }, [clientState]);
+
+
+  // ==========================================
+  // BOTPRESS ERROR LISTENER
+  // ==========================================
+
+  useEffect(() => {
+    if (!on) return;
+
+    const unsubscribe = on(
+      "error",
+      (error) => {
+        console.error(
+          "PhishBot Botpress error:",
+          error
+        );
+      }
+    );
+
+    return () => {
+      unsubscribe?.();
+    };
+  }, [on]);
+
+
+  // ==========================================
+  // MESSAGE DEBUG LISTENER
+  // ==========================================
+
+  useEffect(() => {
+    if (!on) return;
+
+    const unsubscribe = on(
+      "message",
+      (message) => {
+        console.log(
+          "PhishBot message:",
+          message
+        );
+      }
+    );
+
+    return () => {
+      unsubscribe?.();
+    };
+  }, [on]);
 
 
   // ==========================================
@@ -52,7 +123,7 @@ function FloatingAIAssistant() {
     botName: "PhishBot",
 
     botDescription:
-      "AI Assistant untuk membantu anda memahami keselamatan siber."
+      "AI Assistant untuk membantu anda memahami keselamatan siber.",
   };
 
 
@@ -61,9 +132,7 @@ function FloatingAIAssistant() {
   // ==========================================
 
   const enrichedMessages = useMemo(() => {
-
     return messages.map((message) => {
-
       const { authorId } = message;
 
       const direction =
@@ -80,20 +149,18 @@ function FloatingAIAssistant() {
           direction === "outgoing"
             ? {
                 name: user?.name ?? "You",
-                avatar: user?.pictureUrl
+                avatar: user?.pictureUrl,
               }
             : {
-                name: botConfig.botName
-              }
+                name: botConfig.botName,
+              },
       };
-
     });
-
   }, [
     messages,
     user?.id,
     user?.name,
-    user?.pictureUrl
+    user?.pictureUrl,
   ]);
 
 
@@ -102,11 +169,9 @@ function FloatingAIAssistant() {
   // ==========================================
 
   function openAssistant() {
-
     closeHelp();
 
     setIsChatOpen(true);
-
   }
 
 
@@ -115,11 +180,9 @@ function FloatingAIAssistant() {
   // ==========================================
 
   function toggleChat() {
-
     setIsChatOpen(
       (previous) => !previous
     );
-
   }
 
 
@@ -128,9 +191,7 @@ function FloatingAIAssistant() {
   // ==========================================
 
   function closeAssistant() {
-
     setIsChatOpen(false);
-
   }
 
 
@@ -140,7 +201,6 @@ function FloatingAIAssistant() {
 
   return (
     <>
-
       {/* ==================================================
           BOTPRESS STYLES
       ================================================== */}
@@ -160,7 +220,6 @@ function FloatingAIAssistant() {
       ================================================== */}
 
       {showHelp && !isChatOpen && (
-
         <div className="phishbot-help">
 
           <button
@@ -181,20 +240,16 @@ function FloatingAIAssistant() {
 
 
             {helpLevel === 1 ? (
-
               <p>
                 Nampak macam soalan ini agak mencabar.
                 Nak saya terangkan topik ini dengan lebih mudah?
               </p>
-
             ) : (
-
               <p>
                 Jangan risau! Awak nampak macam perlukan
                 sedikit bantuan. Saya boleh bantu awak
                 faham konsep phishing.
               </p>
-
             )}
 
 
@@ -209,7 +264,6 @@ function FloatingAIAssistant() {
           </div>
 
         </div>
-
       )}
 
 
@@ -218,9 +272,7 @@ function FloatingAIAssistant() {
       ================================================== */}
 
       <Container
-        connected={
-          clientState !== "disconnected"
-        }
+        connected={isConnected}
 
         className="phishbot-chat"
 
@@ -241,7 +293,7 @@ function FloatingAIAssistant() {
 
           borderRadius: "20px",
 
-          overflow: "hidden"
+          overflow: "hidden",
         }}
       >
 
@@ -263,7 +315,7 @@ function FloatingAIAssistant() {
               botConfig.botName,
 
             botDescription:
-              botConfig.botDescription
+              botConfig.botDescription,
           }}
         />
 
@@ -296,19 +348,60 @@ function FloatingAIAssistant() {
 
 
         {/* ==================================================
+            CONNECTION ERROR MESSAGE
+        ================================================== */}
+
+        {hasConnectionError && (
+          <div
+            style={{
+              padding: "10px 14px",
+              margin: "0 12px 8px",
+              borderRadius: "10px",
+              background: "#fff1f2",
+              color: "#b42318",
+              fontSize: "12px",
+              textAlign: "center",
+            }}
+          >
+            ⚠️ PhishBot gagal disambungkan.
+            Sila refresh halaman dan cuba lagi.
+          </div>
+        )}
+
+
+        {/* ==================================================
+            CONNECTING MESSAGE
+        ================================================== */}
+
+        {isConnecting && (
+          <div
+            style={{
+              padding: "8px 14px",
+              margin: "0 12px 8px",
+              borderRadius: "10px",
+              background: "#f5f3ff",
+              color: "#6c63ff",
+              fontSize: "12px",
+              textAlign: "center",
+            }}
+          >
+            🤖 PhishBot sedang disambungkan...
+          </div>
+        )}
+
+
+        {/* ==================================================
             COMPOSER
         ================================================== */}
 
         <Composer
-          disableComposer={false}
+          disableComposer={!isConnected}
 
           isReadOnly={false}
 
           allowFileUpload={true}
 
-          connected={
-            clientState !== "disconnected"
-          }
+          connected={isConnected}
 
           sendMessage={
             client?.sendMessage
@@ -318,7 +411,11 @@ function FloatingAIAssistant() {
             client?.uploadFile
           }
 
-          composerPlaceholder="Tanya PhishBot..."
+          composerPlaceholder={
+            isConnected
+              ? "Tanya PhishBot..."
+              : "PhishBot sedang disambungkan..."
+          }
         />
 
       </Container>
