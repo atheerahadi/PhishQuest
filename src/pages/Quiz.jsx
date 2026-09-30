@@ -410,18 +410,23 @@ function Quiz() {
       }
 
 
-      const finalPercentage =
-        Math.round(
-          (finalScore /
-            questions.length) *
-          100
-        );
+     const safeScore = Math.min(
+  Math.max(finalScore, 0),
+  questions.length
+);
 
+const finalPercentage =
+  Math.min(
+    Math.round(
+      (safeScore /
+        questions.length) *
+      100
+    ),
+    100
+  );
 
-      const finalXp =
-        finalScore * 10;
-
-
+const finalXp =
+  safeScore * 10;
       let finalBenchmark = "";
 
 
@@ -481,7 +486,7 @@ function Quiz() {
               user.id,
 
             score:
-              finalScore,
+              safeScore,
 
             total_questions:
               questions.length,
@@ -758,58 +763,47 @@ function Quiz() {
 
   async function nextQuestion() {
 
-    setShowFeedback(false);
+  setShowFeedback(false);
 
+  if (
+    current ===
+    questions.length - 1
+  ) {
 
-    if (
-      current ===
-      questions.length - 1
-    ) {
-
-      await saveQuizResult(
-        score +
-        (
-          lastAnswerCorrect
-            ? 1
-            : 0
-        )
-      );
-
-
-      setScore(
-        score +
-        (
-          lastAnswerCorrect
-            ? 1
-            : 0
-        )
-      );
-
-
-      setFinished(true);
-
-      return;
-
-    }
-
-
-    setCurrent(
-      (previous) =>
-        previous + 1
+    const finalScore = Math.min(
+      Math.max(score, 0),
+      questions.length
     );
 
-
-    setAnswered(false);
-
-    setTimedOut(false);
-
-    setLastAnswerCorrect(false);
-
-    setTimeLeft(
-      QUESTION_TIME
+    await saveQuizResult(
+      finalScore
     );
 
+    setScore(
+      finalScore
+    );
+
+    setFinished(true);
+
+    return;
   }
+
+  setCurrent(
+    (previous) =>
+      previous + 1
+  );
+
+  setAnswered(false);
+
+  setTimedOut(false);
+
+  setLastAnswerCorrect(false);
+
+  setTimeLeft(
+    QUESTION_TIME
+  );
+
+}
 
 
   /*
@@ -824,16 +818,24 @@ function Quiz() {
     100;
 
 
-  const xp =
-    score * 10;
+ const safeDisplayScore =
+  Math.min(
+    Math.max(score, 0),
+    questions.length
+  );
 
+const xp =
+  safeDisplayScore * 10;
 
-  const percentage =
+const percentage =
+  Math.min(
     Math.round(
-      (score /
+      (safeDisplayScore /
         questions.length) *
       100
-    );
+    ),
+    100
+  );
 
 
   /*
@@ -1148,12 +1150,12 @@ function Quiz() {
             </h2>
 
 
-            <div className="scoreCircle">
+           <div className="scoreCircle">
 
-              {score}/
-              {questions.length}
+  {safeDisplayScore}/
+  {questions.length}
 
-            </div>
+</div>
 
 
             <h3>

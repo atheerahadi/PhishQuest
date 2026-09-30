@@ -580,18 +580,19 @@ function Simulation() {
 
     setSaving(true);
 
-    const finalScore =
-      scoreRef.current;
+const finalScore = Math.min(
+  Math.max(scoreRef.current, 0),
+  randomEmails.length
+);
 
-    const finalXp =
-      xpRef.current;
+const finalXp = finalScore * 10;
 
-    const percentage =
-      Math.round(
-        (finalScore /
-          randomEmails.length) *
-          100
-      );
+const percentage = Math.min(
+  Math.round(
+    (finalScore / randomEmails.length) * 100
+  ),
+  100
+);
 
     try {
       const {
@@ -825,12 +826,19 @@ function Simulation() {
   ================================= */
 
   if (finished) {
-    const percentage =
-      Math.round(
-        (score /
-          randomEmails.length) *
-          100
-      );
+ const safeDisplayScore = Math.min(
+  Math.max(score, 0),
+  randomEmails.length
+);
+
+const percentage = Math.min(
+  Math.round(
+    (safeDisplayScore / randomEmails.length) * 100
+  ),
+  100
+);
+
+const displayXp = safeDisplayScore * 10;
 
     return (
       <>
@@ -863,7 +871,7 @@ function Simulation() {
                   </span>
 
                   <strong>
-                    {score} / {randomEmails.length}
+                    {safeDisplayScore} / {randomEmails.length}
                   </strong>
                 </div>
 
@@ -883,7 +891,7 @@ function Simulation() {
                   </span>
 
                   <strong>
-                    ⭐ +{xp}
+                 ⭐ +{displayXp}
                   </strong>
                 </div>
 
