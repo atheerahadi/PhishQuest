@@ -271,6 +271,32 @@ Tuntutan perlu dibuat sebelum tengah malam.`,
       "Domain mencurigakan.",
       "Menawarkan wang secara tiba-tiba."
     ]
+  },
+
+    {
+    sender: "Instagram Security",
+    subject: "Aktiviti Log Masuk Baharu Dikesan",
+    date: "Hari Ini, 7:15 PTG",
+    content: `Hai,
+
+Kami mengesan percubaan log masuk baharu ke akaun Instagram anda.
+
+Jika ini adalah anda, anda tidak perlu melakukan apa-apa.
+
+Jika anda tidak mengenali aktiviti ini, sila buka aplikasi Instagram secara manual untuk menyemak aktiviti log masuk anda.
+
+Jangan berikan kata laluan atau kod keselamatan kepada sesiapa.
+
+Terima kasih,
+Instagram Security`,
+    isPhishing: false,
+    explanation:
+      "E-mel ini selamat kerana tidak meminta pengguna memasukkan kata laluan atau kod keselamatan melalui pautan dan mengarahkan pengguna menyemak akaun melalui aplikasi rasmi.",
+    redFlags: [
+      "Tiada pautan mencurigakan.",
+      "Tidak meminta kata laluan atau kod keselamatan.",
+      "Mengarahkan pengguna membuka aplikasi rasmi secara manual."
+    ]
   }
 ];
 

@@ -832,7 +832,7 @@
 
   overflow: hidden;
 
-  margin-bottom: 30px;
+  margin-bottom: 35px;
 }
 
 
@@ -1051,72 +1051,65 @@
   color: #a9781e;
 }
 
-
 /* =========================================================
    CERTIFICATE CARD
    ========================================================= */
 
 .certificateDashboardCard {
   position: relative;
-
   width: 100%;
 
-  min-height: 360px;
-
-  padding: 38px;
+  min-height: 250px;
+  padding: 35px 38px;
 
   box-sizing: border-box;
 
   display: grid;
-
-  grid-template-columns:
-    1.05fr 0.95fr;
+  grid-template-columns: 1.05fr 0.95fr;
 
   align-items: center;
-
   gap: 30px;
 
   overflow: hidden;
 
   border-radius: 28px;
 
-  border: 2px solid #d49a23;
-
+  /* Same style as Learning Progress Card */
   background:
     linear-gradient(
       135deg,
-      #fffdf7 0%,
-      #fff8e8 55%,
-      #fdf0ce 100%
+      #ffffff 0%,
+      #fffdf8 55%,
+      #fff8e8 100%
     );
 
-  box-shadow:
-    0 15px 35px
-    rgba(143, 100, 20, 0.12);
+  border: none;
 
-  margin-bottom: 30px;
+  box-shadow:
+    0 12px 35px rgba(120, 85, 20, 0.10);
+
+    margin-top: 20px;  
+    margin-bottom: 20px;
 }
 
-
 /* Decorative background */
-
 .certificateDashboardCard::before {
   content: "";
 
   position: absolute;
 
-  width: 500px;
-  height: 500px;
+  width: 420px;
+  height: 420px;
 
-  right: -220px;
-  top: -190px;
+  right: -180px;
+  top: -170px;
 
   border-radius: 50%;
 
   background:
     radial-gradient(
       circle,
-      rgba(235, 178, 44, 0.16),
+      rgba(245, 190, 60, 0.12),
       transparent 68%
     );
 
@@ -1128,19 +1121,18 @@
 
   position: absolute;
 
-  width: 350px;
-  height: 350px;
+  width: 300px;
+  height: 300px;
 
   left: 40%;
-
-  bottom: -250px;
+  bottom: -220px;
 
   border-radius: 50%;
 
   background:
     radial-gradient(
       circle,
-      rgba(239, 193, 82, 0.13),
+      rgba(239, 193, 82, 0.08),
       transparent 70%
     );
 
@@ -1158,20 +1150,6 @@
   z-index: 2;
 }
 
-.certificateDashboardTitle {
-  display: flex;
-
-  align-items: center;
-
-  gap: 12px;
-
-  margin-bottom: 18px;
-}
-
-.certificateDashboardTitleIcon {
-  font-size: 38px;
-}
-
 .certificateDashboardTitle h2 {
   margin: 0;
 
@@ -1180,9 +1158,35 @@
     "Times New Roman",
     serif;
 
-  font-size: 32px;
+  font-size: 30px;
 
-  color: #1f1f1f;
+  color: #202020;
+}
+
+.certificateDashboardTitleIcon {
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      145deg,
+      #fff4c9,
+      #f5cf69
+    );
+
+  font-size: 29px;
+
+  box-shadow:
+    0 5px 15px
+    rgba(192, 137, 28, 0.15);
 }
 
 .certificateDashboardLine {
@@ -1420,37 +1424,33 @@
   position: relative;
 
   width: 220px;
-
   height: 270px;
 
   padding: 22px;
 
   box-sizing: border-box;
 
-  border-radius: 8px;
+  border-radius: 10px;
 
   background:
     linear-gradient(
       145deg,
       #fffefa,
-      #fff5da
+      #fff8e8
     );
 
-  border: 3px solid #d29a28;
+  border: 2px solid #e3bd63;
 
   box-shadow:
-    0 18px 30px
-    rgba(85, 60, 15, 0.18);
+    0 15px 28px
+    rgba(85, 60, 15, 0.14);
 
-  transform:
-    rotate(4deg);
+  transform: rotate(3deg);
 
   display: flex;
-
   flex-direction: column;
 
   align-items: center;
-
   text-align: center;
 }
 
@@ -1514,11 +1514,15 @@
     "Times New Roman",
     serif;
 
-  font-size: 17px;
+  font-size: 14px;
+
+  line-height: 1.15;
 
   font-weight: 700;
 
   color: #222;
+
+  max-width: 170px;
 }
 
 .certificatePaperSeal {

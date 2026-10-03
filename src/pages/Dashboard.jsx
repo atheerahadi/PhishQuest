@@ -670,151 +670,209 @@ function Dashboard() {
             CERTIFICATE
         ========================= */}
 
-        <div className="certificateCard">
+        {certificateUnlocked ? (
 
+          <div className="certificateDashboardCard">
 
-          <h2>
-            🎓 Sijil PhishQuest
-          </h2>
+            {/* LEFT CONTENT */}
 
+            <div className="certificateDashboardContent">
 
-          {certificateUnlocked ? (
+              <div className="certificateDashboardTitle">
 
-            <>
+                <div className="certificateDashboardTitleIcon">
+                  🎓
+                </div>
 
-              <p>
-
-                🎉 Tahniah!
-
-                <br />
-
-                Anda telah berjaya melengkapkan
-                semua 6 modul pembelajaran
-                PhishQuest.
-
-              </p>
-
-
-              <div className="certificateProgress">
-
-                <strong>
-                  {completedModules} / {totalModules} Modul Selesai
-                </strong>
+                <h2>
+                  Sijil PhishQuest
+                </h2>
 
               </div>
 
 
-              <p>
+              <div className="certificateDashboardLine"></div>
 
-                Kemajuan:
-                {" "}
-                {moduleCompletionPercentage}%
 
-              </p>
+              <div className="certificateCongrats">
+
+                <h3>
+                  🎉 Tahniah!
+                </h3>
+
+                <p>
+                  Anda telah berjaya melengkapkan
+                  semua 6 modul pembelajaran PhishQuest.
+                </p>
+
+              </div>
+
+
+              <div className="certificateCompletionBox">
+
+                <div className="certificateCompletionIcon">
+                  ✓
+                </div>
+
+                <div className="certificateCompletionText">
+
+                  <span>
+                    STATUS PEMBELAJARAN
+                  </span>
+
+                  <strong>
+                    {completedModules} / {totalModules}
+                  </strong>
+
+                  <small>
+                    Modul selesai • {moduleCompletionPercentage}% lengkap
+                  </small>
+
+                </div>
+
+              </div>
 
 
               {certificate ? (
 
                 <button
-
-                  className="certificateBtn"
-
+                  className="certificateViewButton"
                   onClick={() =>
                     navigate("/certificate")
                   }
-
                 >
-
                   🎓 Lihat Sijil
-
                 </button>
 
               ) : (
 
                 <button
-
-                  className="certificateBtn"
-
+                  className="certificateViewButton"
                   onClick={() =>
                     navigate("/certificate")
                   }
-
                 >
-
                   🎓 Jana Sijil
-
                 </button>
 
               )}
 
 
-            </>
-
-          ) : (
-
-            <>
-
-              <p>
-
-                Lengkapkan semua 6 modul
-                pembelajaran untuk membuka
-                Sijil PhishQuest anda.
-
-              </p>
+            </div>
 
 
-              <div className="certificateProgress">
+            {/* RIGHT CERTIFICATE PREVIEW */}
+
+            <div className="certificateDashboardVisual">
+
+              <div className="certificatePaperPreview">
+
+                <div className="certificatePaperLogo">
+                  🎓
+                </div>
+
+                <h4>
+                  SIJIL
+                </h4>
+
+                <p>
+                  PhishQuest
+                </p>
+
+                <p>
+                  Certificate of Completion
+                </p>
+
+                <div className="certificatePaperName">
+                  {profile?.name || "Pelajar PhishQuest"}
+                </div>
+
+                <div className="certificatePaperSeal">
+                  🏆
+                </div>
+
+              </div>
+
+            </div>
+
+
+          </div>
+
+        ) : (
+
+          <div className="certificateDashboardLocked">
+
+            <h2>
+              🎓 Sijil PhishQuest
+            </h2>
+
+            <p>
+              Lengkapkan semua 6 modul pembelajaran
+              untuk membuka Sijil PhishQuest anda.
+            </p>
+
+
+            <div className="certificateCompletionBox">
+
+              <div className="certificateCompletionIcon">
+                🔒
+              </div>
+
+              <div className="certificateCompletionText">
+
+                <span>
+                  KEMAJUAN PEMBELAJARAN
+                </span>
 
                 <strong>
-                  {completedModules} / {totalModules} Modul Selesai
+                  {completedModules} / {totalModules}
                 </strong>
 
-              </div>
-
-
-              <p>
-
-                Kemajuan:
-                {" "}
-                {moduleCompletionPercentage}%
-
-              </p>
-
-
-              <div className="certificateMiniBar">
-
-                <div
-
-                  className="certificateMiniFill"
-
-                  style={{
-                    width:
-                      `${moduleCompletionPercentage}%`
-                  }}
-
-                ></div>
+                <small>
+                  {moduleCompletionPercentage}% selesai
+                </small>
 
               </div>
 
-
-              <button
-
-                className="certificateBtn"
-
-                disabled
-
-              >
-
-                🔒 Sijil Dikunci
-
-              </button>
-
-            </>
-
-          )}
+            </div>
 
 
-        </div>
+            <div className="learningProgressBarWrapper">
+
+              <div
+
+                className="learningProgressBar"
+
+                style={{
+                  width:
+                    `${moduleCompletionPercentage}%`
+                }}
+
+              ></div>
+
+            </div>
+
+
+            <button
+
+              className="certificateViewButton"
+
+              disabled
+
+              style={{
+                opacity: 0.5,
+                cursor: "not-allowed"
+              }}
+
+            >
+
+              🔒 Sijil Dikunci
+
+            </button>
+
+          </div>
+
+        )}
 
 
         {/* =========================
@@ -991,7 +1049,6 @@ function Dashboard() {
 
                 {latestQuiz.percentage}%
 
-
                 <br />
 
 
@@ -1000,7 +1057,6 @@ function Dashboard() {
                 </strong>{" "}
 
                 +{latestQuiz.xp_earned} XP
-
 
                 <br />
 
@@ -1039,12 +1095,8 @@ function Dashboard() {
                   Markah:
                 </strong>{" "}
 
-                {Math.round(
-                  latestSimulation.score / 10
-                )}
-
+                {latestSimulation.score}
                 /
-
                 {latestSimulation.total_questions}
 
 

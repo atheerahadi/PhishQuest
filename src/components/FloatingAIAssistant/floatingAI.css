@@ -3,26 +3,37 @@
 ========================================================= */
 
 .phishbot-button {
-  position: fixed;
-  right: 25px;
-  bottom: 25px;
+  position: fixed !important;
 
-  width: 60px;
-  height: 60px;
+  right: 25px !important;
+  bottom: 25px !important;
 
-  border: none;
-  outline: none;
+  width: 60px !important;
+  height: 60px !important;
 
-  background: white;
-  border-radius: 50%;
+  margin: 0 !important;
+  padding: 5px !important;
 
-  padding: 5px;
-  cursor: pointer;
+  border: none !important;
+  outline: none !important;
 
-  z-index: 9999;
+  background: #ffffff !important;
+  border-radius: 50% !important;
+
+  cursor: pointer !important;
+
+  z-index: 2147483647 !important;
+
+  box-sizing: border-box !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  overflow: hidden !important;
 
   box-shadow:
-    0 5px 20px rgba(0, 0, 0, 0.20);
+    0 5px 18px rgba(0, 0, 0, 0.18) !important;
 
   transition:
     transform 0.3s ease,
@@ -30,26 +41,41 @@
 }
 
 
-/* PHISHBOT IMAGE */
+/* =========================================================
+   PHISHBOT IMAGE
+========================================================= */
 
 .phishbot-button img {
-  width: 48px;
-  height: 48px;
+  width: 46px !important;
+  height: 46px !important;
 
-  object-fit: contain;
+  max-width: none !important;
+  max-height: none !important;
 
-  display: block;
-  margin: auto;
+  display: block !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  object-fit: contain !important;
+
+  pointer-events: none !important;
+
+  border: none !important;
+
+  border-radius: 0 !important;
 }
 
 
-/* HOVER */
+/* =========================================================
+   HOVER
+========================================================= */
 
 .phishbot-button:hover {
   transform: scale(1.08);
 
   box-shadow:
-    0 8px 25px rgba(0, 0, 0, 0.25);
+    0 8px 25px rgba(0, 0, 0, 0.22) !important;
 }
 
 
@@ -63,16 +89,13 @@
 
 
 @keyframes phishbotBounce {
-
-  0%,
-  100% {
+  0%, 100% {
     transform: translateY(0);
   }
 
   50% {
-    transform: translateY(-8px);
+    transform: translateY(-6px);
   }
-
 }
 
 
@@ -81,10 +104,10 @@
 ========================================================= */
 
 .phishbot-help {
-  position: fixed;
+  position: fixed !important;
 
-  right: 25px;
-  bottom: 100px;
+  right: 25px !important;
+  bottom: 100px !important;
 
   width: 300px;
 
@@ -101,11 +124,13 @@
   box-shadow:
     0 8px 30px rgba(0, 0, 0, 0.20);
 
-  z-index: 9998;
+  z-index: 2147483646 !important;
 }
 
 
-/* HELP CLOSE */
+/* =========================================================
+   HELP CLOSE
+========================================================= */
 
 .help-close {
   position: absolute;
@@ -136,7 +161,9 @@
 }
 
 
-/* HELP CONTENT */
+/* =========================================================
+   HELP CONTENT
+========================================================= */
 
 .help-content {
   padding-right: 20px;
@@ -166,7 +193,9 @@
 }
 
 
-/* HELP BUTTON */
+/* =========================================================
+   HELP BUTTON
+========================================================= */
 
 .help-button {
   width: 100%;
@@ -216,9 +245,10 @@
   max-height: calc(100vh - 125px) !important;
 
   display: flex;
+
   flex-direction: column;
 
-  z-index: 9998 !important;
+  z-index: 2147483645 !important;
 
   background: white;
 
@@ -238,25 +268,23 @@
 @media (max-width: 768px) {
 
   .phishbot-button {
-    right: 18px;
-    bottom: 18px;
+    right: 18px !important;
+    bottom: 18px !important;
 
-    width: 58px;
-    height: 58px;
-
-    padding: 5px;
+    width: 60px !important;
+    height: 60px !important;
   }
 
 
   .phishbot-button img {
-    width: 46px;
-    height: 46px;
+    width: 46px !important;
+    height: 46px !important;
   }
 
 
   .phishbot-help {
-    right: 18px;
-    bottom: 88px;
+    right: 18px !important;
+    bottom: 88px !important;
 
     width: 300px;
   }
@@ -285,27 +313,25 @@
 @media (max-width: 480px) {
 
   .phishbot-button {
-    right: 14px;
-    bottom: 14px;
+    right: 14px !important;
+    bottom: 14px !important;
 
-    width: 55px;
-    height: 55px;
-
-    padding: 4px;
+    width: 55px !important;
+    height: 55px !important;
   }
 
 
   .phishbot-button img {
-    width: 45px;
-    height: 45px;
+    width: 45px !important;
+    height: 45px !important;
   }
 
 
   .phishbot-help {
-    left: 15px;
-    right: 15px;
+    left: 15px !important;
+    right: 15px !important;
 
-    bottom: 80px;
+    bottom: 80px !important;
 
     width: auto;
 
@@ -344,17 +370,17 @@
 @media (max-width: 360px) {
 
   .phishbot-button {
-    width: 52px;
-    height: 52px;
+    width: 52px !important;
+    height: 52px !important;
 
-    right: 12px;
-    bottom: 12px;
+    right: 12px !important;
+    bottom: 12px !important;
   }
 
 
   .phishbot-button img {
-    width: 42px;
-    height: 42px;
+    width: 42px !important;
+    height: 42px !important;
   }
 
 
@@ -369,4 +395,24 @@
     max-height: calc(100vh - 90px) !important;
   }
 
+}
+/* =========================================================
+   HIDE BOTPRESS DEFAULT FLOATING BUTTON
+   We use our own PhishBot button instead.
+========================================================= */
+
+#bp-web-widget {
+  display: none !important;
+}
+
+.bp-webchat-widget {
+  display: none !important;
+}
+
+.bp-widget-button {
+  display: none !important;
+}
+
+button[class*="bp-widget"] {
+  display: none !important;
 }
